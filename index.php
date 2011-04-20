@@ -2,7 +2,7 @@
 	// PONGSOCKET TWEET ARCHIVE
 	// Front page
 	
-	$userid = 'netkickstart';
+//	$userid = 'rapextras';
 	require "inc/preheader.php";
 	$qsql = "SELECT `".DTP."tweets`.*, `".DTP."tweetusers`.`screenname`, `".DTP."tweetusers`.`realname`, `".DTP."tweetusers`.`profileimage` FROM `".DTP."tweets` 
 		LEFT JOIN `".DTP."tweetusers` ON `".DTP."tweets`.`userid` = `".DTP."tweetusers`.`userid` 
