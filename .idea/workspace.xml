@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\projects\tweetnest-updated\inc\class.search.php.bak" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\projects\tweetnest-updated\inc\html.php.bak" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\projects\tweetnest-updated\inc\preheader.php.bak" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\projects\tweetnest-updated\maintenance\loadtweets.php.bak" afterPath="" />
-    </list>
+    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="" />
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
