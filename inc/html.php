@@ -25,7 +25,7 @@
 		$searching = $home ? false : (count($highlightedMonths) > 0);
 		$s = "<ul id=\"months\">\n";
 		if(!$home){
-			$s .= $y . "<li class=\"home\"><a href=\"" . $path . "/\"><span class=\"m" . ($searching ? " ms\"><span class=\"a\">" : "\">") . "Recent tweets" . ($searching ? "</span><span class=\"b\"> (exit " . s($filterMode) . ")</span>" : "") . "</span></a></li>\n";
+			$s .= $y . "<li class=\"home\"><a href=\"" . $path . "/\"><span class=\"m" . ($searching ? " ms\"><span class=\"a\">" : "\">") . "Recent tweets" . ($searching ? "</span><br><span class=\"b\"> (exit " . s($filterMode) . ")</span>" : "") . "</span></a></li>\n";
 		}
 		if(!$searching){
 			$s .= $y . "<li class=\"fav\"><a href=\"" . $path . "/favorites\"><span class=\"m\">Favorites</span></a></li>\n";
@@ -96,7 +96,11 @@
 			$total += $r['c'];
 		}
 		$daysInMonth = getDaysInMonth($month, $year);
-		$s = "<div id=\"days\" class=\"days-" . s($daysInMonth) . "\"><div class=\"dr\">\n";
+
+        /** start id=days_container */
+        $s = "<div id='days_container'>";
+
+		$s .= "<div id=\"days\" class=\"days-" . s($daysInMonth) . "\"><div class=\"dr\">\n";
 		for($i = 0; $i < $daysInMonth; $i++){
 			$today = ($selectedDate['y'] == $year && $selectedDate['m'] == $month && $selectedDate['d'] == ($i+1));
 			if(array_key_exists($i+1, $days)){
@@ -105,10 +109,10 @@
 				(!empty($d['c1']) ? ", " . s($d['c1']) . " repl" . ($d['c1'] == 1 ? "y" : "ies") : "") .
 				(!empty($d['c2']) ? ", " . s($d['c2']) . " retweet" . ($d['c2'] == 1 ? "" : "s") : "") .
 				"\" href=\"" . $path . "/" . s($year) . "/" . s(pad($month)) . "/" . s(pad($i+1)) . "\">" .
-				"<span class=\"p\" style=\"height:" . round((($d['total']/$max)*250), 2) . "px\">" .
+				"<span class=\"p\" style=\"height:" . round((($d['total']/$max)*DAY_MAX_HEIGHT), 2) . "px\">" .
 				"<span class=\"n\">" . ($d['total'] != 1 ? number_format($d['total']) : "") . "</span>" . 
-				(!empty($d['c1']) ? "<span class=\"r\" style=\"height:" . round((($d['c1']/$max)*250), 2) . "px\"></span>" : "") . 
-				(!empty($d['c2']) ? "<span class=\"rt\" style=\"height:" . round((($d['c2']/$max)*250), 2) . "px\"></span>" : "") . 
+				(!empty($d['c1']) ? "<span class=\"r\" style=\"height:" . round((($d['c1']/$max)*DAY_MAX_HEIGHT), 2) . "px\"></span>" : "") .
+				(!empty($d['c2']) ? "<span class=\"rt\" style=\"height:" . round((($d['c2']/$max)*DAY_MAX_HEIGHT), 2) . "px\"></span>" : "") .
 				"</span><span class=\"m" . (($wd == 0 || $wd == 6) ? " mm" : "") . ($today ? " ms" : "") . "\">" . 
 				($today ? "<strong>" : "") . s($i+1) . ($today ? "</strong>" : "") . 
 				"</span></a></div>\n";
@@ -121,6 +125,11 @@
 			$wd = ($wd == 6) ? 0 : $wd + 1;
 		}
 		$s .= $x . "</div></div>\n";
+
+        /** ends id=days_container */
+        $s .= "<div style='clear:both;'></div>";
+        $s .= "</div>";
+
 		return $s;
 	}
 	

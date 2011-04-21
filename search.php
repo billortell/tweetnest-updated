@@ -37,7 +37,11 @@
 
 	}
 	
-	$pageTitle   = "Searching for \"" . $_GET['q'] . "\"" . ($month ? " in " . date("F Y", mktime(1,0,0,$m,1,$_GET['y'])) : "");
+	$pageTitle   = "Searching for ...";
+    $pageTitleSearchTerms .= $_GET['q'];
+
+
+    $pageTitle .= ($month ? " in " . date("F Y", mktime(1,0,0,$m,1,$_GET['y'])) : "");
 	// Don't worry; above string is being sanitized later in the files
 	$searchQuery = $_GET['q'];
 	

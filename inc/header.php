@@ -29,22 +29,60 @@
 	<div id="container">
 		<div id="top">
 			<div id="author">
-				<h2><a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>"><strong><?php echo s($author['realname']); ?></strong> (@<?php echo s($config['twitter_screenname']); ?>)<img src="<?php echo s($author['profileimage']); ?>" width="48" height="48" alt="" /></a></h2>
-				<p><?php echo s($author['location']); ?></p>
+                <img src="<?php echo s($author['profileimage']); ?>" width="48" height="48" alt="" />
+                <h2>
+                    <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
+                        <strong><?php echo s($author['realname']); ?></strong>
+                        (@<?php echo s($config['twitter_screenname']); ?>)
+                    </a>
+                </h2>
+                    <p><?php echo s($author['location']); ?></p>
 			</div>
 			<div id="info">
 				<p>The below is an off-site archive of <strong><a href="<?php echo $path; ?>/">all tweets posted by @<?php echo s($config['twitter_screenname']); ?></a></strong> ever</p>
 <?php if($config['follow_me_button']){ ?>				<p class="follow"><a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">Follow me on Twitter</a></p><?php echo "\n"; } ?>
 			</div>
 		</div>
+
+
+
+        <div>
+            <div class='search_form_toggle'>
+                <span>use search tool</span>
+            </div>
+            <div class='search_form' style='display:none;'>
+
+                <form id="search_big" action="<?php echo $path; ?>/search" method="get">
+                    <div>
+                        <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
+                        <br/>
+                        type in any word, combination of words, we'll find it!
+                        <br/>
+                        <span class="meonly"><?php echo !empty($_SESSION[user])? "search within <strong>".$_SESSION[user]."</strong> only " : "" ;?></span>
+                        <input type="checkbox" name="meonly" <?php echo $_GET[meonly]?"checked=checked":"";?> />
+                    </div>
+                </form>
+                <div style='clear:both;'></div>
+
+            </div>
+            <div style='clear:both;'></div>
+        </div>
+        <div style='clear:both;'></div>
+        
+
 		<div id="content">
+
 			<h1><?php echo $pageHeader ? p(s($pageHeader, ENT_NOQUOTES), 3, true) : p(s($pageTitle, ENT_NOQUOTES), 3, true); ?></h1>
-			<form id="search" action="<?php echo $path; ?>/search" method="get">
+
+            <?php if ($pageTitleSearchTerms) : ?>
+            <h2><strong class="searchword"><?php echo $pageTitleSearchTerms;?></strong></h2>
+            <?php endif; ?>
+			<div style='display:none;'><form id="search" action="<?php echo $path; ?>/search" method="get">
                 <div>
                     <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
                     <br/><span class="meonly"><?php echo !empty($_SESSION[user])? $_SESSION[user]." only " : "" ;?></span>
                     <input type="checkbox" name="meonly" checked=checked />
                 </div>
-            </form>
+            </form></div>
 <?php if($preBody){ echo "\t\t\t" . $preBody . "\n"; } ?>
 			<div id="c"><div id="primary">

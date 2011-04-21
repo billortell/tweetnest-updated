@@ -5,7 +5,7 @@
 var searchPlaceholder = "Search for tweets..."
 
 $(document).ready(function(){
-	$("#search input").focus(function(){
+	$("#search input,#search_big input").focus(function(){
 		if(this.className == "empty"){
 			this.value = ""
 			$(this).removeClass("empty")
@@ -19,7 +19,17 @@ $(document).ready(function(){
 	if($("#search input").val() == "" || $("#search input").val() == searchPlaceholder){
 		$("#search input").addClass("empty").val(searchPlaceholder)
 	}
-	
+
+    if($("#search_big input").val() == "" || $("#search_big input").val() == searchPlaceholder){
+        $("#search_big input").addClass("empty").val(searchPlaceholder)
+    }
+
+    /** unhide search_big form **/
+    $("div.search_form_toggle").bind("click",function(){
+        $(this).next().toggle();
+    })
+
+
 	// Hover associations
 	$("a.picl").each(function(){
 		var cn = this.className.split(" ")

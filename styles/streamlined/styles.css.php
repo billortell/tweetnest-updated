@@ -15,14 +15,18 @@
  */
 
 body {
-	margin: 0;
+	margin: 0 auto;
 	color: <?php echo css("text_color"); ?>;
 	background-color: <?php echo css("content_background_color"); ?>;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: x-small;
 	voice-family: "\"}\"";
 	font-size: small;
-} html>body { font-size: small; }
+
+    width: 720px;
+}
+
+html>body { font-size: small; }
 
         span.user_notsame {
         color: #ff9900;
@@ -33,6 +37,11 @@ body {
 	font-size: 117%;
 }
 
+        strong.searchword {
+            background: #FF5E99;
+            color:#fff;
+            text-shadow: none;
+        }
 strong { font-weight: bold;   }
 em     { font-style:  italic; }
 
@@ -54,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
 	position: relative;
-	margin: 30px 46px;
+	margin: 20px 10px;
 	overflow: hidden;
 }
 
@@ -65,12 +74,12 @@ h1, h2, h3, h4, h5, h6 {
 	background-repeat: <?php echo css("top_background_image_tile"); ?>;
 	background-position: <?php echo css("top_background_image_position"); ?>;
 	color: <?php echo css("top_text_color"); ?>;
-	padding: 20px 46px;
+	padding: 20px 10px;
 	min-height: 52px;
 }
 
 #top #author h2, #top #author p {
-	margin: 0 0 0 65px;
+	margin: 0px;
 }
 
 #top #author h2 {
@@ -93,12 +102,13 @@ h1, h2, h3, h4, h5, h6 {
 	color: <?php echo css("top_realname_color"); ?>;
 }
 
-#top #author h2 img {
-	position: absolute;
-	top: 20px;
-	left: 46px;
-	border: 2px solid <?php echo css("top_image_border_color"); ?>;
+#top #author h2 img,
+#top #author img {
+	margin-left: 15px;
+    margin-right: 20px;
+	border: 0px solid <?php echo css("top_image_border_color"); ?>;
 	background-color: <?php echo css("top_image_border_color"); ?>;
+        float:left;
 }
 
 #top #info {
@@ -114,7 +124,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #top #info p {
-	margin: 10px 46px;
+	margin: 10px 10px;
+        color: white;
 }
 
 #top #info strong a {
@@ -253,7 +264,7 @@ p.meta a:hover {
 	text-align: right;
 }
 
-#search input {
+#search input[type=text] {
 	border: 1px solid <?php echo css("search_border_color"); ?>;
 	background: <?php echo css("search_background_color"); ?> url(search.png) no-repeat 7px 5px;
 	font: 85% "Helvetica Neue", Helvetica, sans-serif;
@@ -265,6 +276,43 @@ p.meta a:hover {
 	-o-border-radius: 12px;
 	-khtml-border-radius: 12px;
 }
+
+
+
+#search_big {
+	text-align: center;
+}
+
+#search_big input[type=text] {
+	border: 1px solid <?php echo css("search_border_color"); ?>;
+	background: <?php echo css("search_background_color"); ?> url(search.png) no-repeat 14px 13px;
+	font: 120% "Helvetica Neue", Helvetica, sans-serif;
+	color: <?php echo css("search_text_color"); ?>;
+	padding: 7px 7px 7px 44px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-o-border-radius: 20px;
+	-khtml-border-radius: 20px;
+
+        text-align:center;
+        width: 450px;
+        font-weight: bold;
+}
+
+div.search_form{
+    padding: 15px 0px;
+    margin-bottom: 15px;
+    background: #ddd;
+}
+div.search_form_toggle {
+    text-align:right;
+    font-size: 80%;
+
+}
+
+
+
 
         #search span.meonly {
             font: 80% "Helvetica Neue", Helvetica, sans-serif;
@@ -490,6 +538,8 @@ ul#months, #months ul {
 	margin: 0 0 2em;
 }
 
+
+
 #days .dr {
 	display: table-row;
 }
@@ -563,8 +613,8 @@ ul#months, #months ul {
 
 #footer {
 	clear: both;
-	margin: 40px 0 20px;
-	padding: 20px 46px 0;
+	margin: 10px auto;
+	padding: 10px;
 	border-top: 1px solid <?php echo css("footer_border_color"); ?>;
 	font-size: 85%;
 	color: <?php echo css("footer_text_color"); ?>;
