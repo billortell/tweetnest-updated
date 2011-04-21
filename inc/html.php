@@ -148,11 +148,13 @@
 				((!$rt && $tweetextra && @!empty($tweetextra['in_reply_to_status_id'])) ? $t . "\t\t<a class=\"replyto\" href=\"http://twitter.com/" . s($tweetextra['in_reply_to_screen_name']) . "/statuses/" . s($tweetextra['in_reply_to_status_id']) . "\">in reply to " . s($tweetextra['in_reply_to_screen_name']) . "</a>\n" : "") . 
 				(($tweetplace && @$tweetplace->full_name) ? "\t\t<span class=\"place\">from <a href=\"http://maps.google.com/?q=" . urlencode($tweetplace->full_name) . "\">" . s($tweetplace->full_name) . "</a></span>" : "") .
 				$t . "\t</p>\n" . $t . "</div>\n";
+
+
 		$dd = hook("displayTweet", array($d, $tweet));
-		if(!empty($dd)){ $d = $dd; }
+        if(!empty($dd)){ $d = $dd[0]; }
 		return  $d;
 	}
-	
+
 	function tweetsHTML($q, $mode = "", $tabs = 4){
 		global $db, $home, $config;
 
@@ -176,6 +178,7 @@
 			foreach($tweets as $tweet){
 				if($tweet['time'] < $first || $first == 0){ $first = $tweet['time']; }
 				if($tweet['time'] > $last){ $last = $tweet['time']; }
+
 				$s .= tweetHTML($tweet, $tabs);
 				$i++;
 				if($mode == "month" && $i >= $maxTweets){

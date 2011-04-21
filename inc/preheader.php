@@ -9,8 +9,61 @@
 	mb_internal_encoding("UTF-8");
 	
 	define("TWEET_NEST", "0.8.2"); // Version number
-	
+
+
+
+
+    //	$userid = 'rapextras';
+    /***
+     * this is whom we're goin' to show...
+     * - this should be driven out by a session variable as we
+     * put in acl priv's
+     *
+     */
+    session_start();
+    $u = "rapextras";
+
+    if ( strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/") ) {
+
+        session_destroy();
+        session_start();
+        session_regenerate_id();
+        
+    }
+
+    /***
+     * store user info so we don't have to keep user= in URL
+     * or in FORM input/hidden fields when searching...
+     *
+     * ==> this would need to become a user/login thingy..
+     */
+    if ( !empty($_GET[user]) ) {
+
+    //    session_destroy();
+    //    session_start();
+    //    session_regenerate_id();
+
+        //@todo - check if it's a valid one... if not... reset the
+        //   session[user] to config[tweet_username]
+
+        $_SESSION["user"] = $_GET["user"];
+
+    } elseif ( empty($_SESSION["user"] ) ) {
+
+        $_SESSION["user"] = $u;
+
+    }
+
+
+
+
+    /***
+     * includes all the settings for the site
+     * -- including the tweet_username
+     * (which in our case can be dynamically reset/set)
+     */
 	require "config.php";
+
 	if(empty($config['twitter_screenname'])){ header("Location: ./setup.php"); exit; }
 	date_default_timezone_set($config['timezone']);
 	define("DTP", $config['db']['table_prefix']);
@@ -158,6 +211,7 @@
 
 
 	function getUserWhere($u=false,$andInstead=false,$uid=FALSE){
+        
 		if ( empty($u) )
 			return "";
 		if ( !$uid )
@@ -171,22 +225,19 @@
 	
 	if ( strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/") ) {
 	
-		echo "we're in maint. mode!";
-		echo strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/");
+	//	echo strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/");
 
 	} else {
 	
 		/***
 		 *		assign user to view...
 		 **/
-		$u = "netkickstart";
-	
-		$use_user = ( empty( $u ) ) ? $config['twitter_screenname'] : $u ;
+
+
+		$u = $use_user = ( empty( $_SESSION["user"] ) ) ? $config['twitter_screenname'] : $_SESSION["user"] ;
 		$config['twitter_screenname'] = $use_user;
 	
 	}
-
-
 
 
 
@@ -218,3 +269,4 @@
 		$qwhr['where'] = $qwhr['and'] = $qwhr['where_userid'] = $qwhr['and_userid'] = "";
 	}
 	
+

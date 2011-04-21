@@ -1,4 +1,5 @@
 <?php
+
 	// TWEET NEST
 	// HTML Header
 	
@@ -21,7 +22,7 @@
 	<?php endif;?>
 	<link rel="stylesheet" href="<?php echo $path; ?>/emoji.css" type="text/css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/<?php echo s($jQueryVersion); ?>/jquery.min.js"></script>
-<?php if($config['anywhere_apikey']){ ?>	<script type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=<?php echo s($config['anywhere_apikey']); ?>&amp;v=1"></script><?php echo "\n"; } ?>
+<?php if($config['anywhere_apikey']){ ?><script type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=<?php echo s($config['anywhere_apikey']); ?>&amp;v=1"></script><?php echo "\n"; } ?>
 	<script type="text/javascript" src="<?php echo $path; ?>/tweets.js"></script>
 </head>
 <body>
