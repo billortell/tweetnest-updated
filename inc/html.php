@@ -144,6 +144,14 @@
 				), $tweet), 3)) . "</p>\n" . 
 				$t . "\t<p class=\"meta\">\n" . $t . "\t\t<a href=\"http://twitter.com/" . s($rt ? $retweet['screenname'] : $tweet['screenname']) . "/statuses/" . s($rt ? $retweet['tweetid'] : $tweet['tweetid']) . "\" class=\"permalink\">" . date("g:i A, M jS, Y", ($rt ? $retweet['time'] : $tweet['time'])) . "</a>\n" . 
 				$t . "\t\t<span class=\"via\">via " . ($rt ? $retweet['source'] : $tweet['source']) . "</span>\n" .
+
+                /** attached username link if not same as logged in/cached/session'd */
+                (
+                    $_SESSION[user]!=$tweet['screenname'] ?
+                        " by <a href='http://twitter.com/" . $tweet['screenname'] . "' target='_blank'><span class=user_notsame>" . $tweet['screenname'] . "</span></a>"
+                        : ""
+                ) .
+
 				($rt ? $t . "\t\t<span class=\"rted\">(retweeted on " . date("g:i A, M jS, Y", $tweet['time']) . " <span class=\"via\">via " . $tweet['source'] . "</span>)</span>\n" : "") . 
 				((!$rt && $tweetextra && @!empty($tweetextra['in_reply_to_status_id'])) ? $t . "\t\t<a class=\"replyto\" href=\"http://twitter.com/" . s($tweetextra['in_reply_to_screen_name']) . "/statuses/" . s($tweetextra['in_reply_to_status_id']) . "\">in reply to " . s($tweetextra['in_reply_to_screen_name']) . "</a>\n" : "") . 
 				(($tweetplace && @$tweetplace->full_name) ? "\t\t<span class=\"place\">from <a href=\"http://maps.google.com/?q=" . urlencode($tweetplace->full_name) . "\">" . s($tweetplace->full_name) . "</a></span>" : "") .

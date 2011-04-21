@@ -261,7 +261,8 @@
 	$qwhr = array();
 	if ( !empty( $u ) ) {
 		$qwhr['where'] = getUserWhere($u);
-		$qwhr['and'] = getUserWhere($u, TRUE);
+        $qwhr['and'] = getUserWhere($u, TRUE);
+        $qwhr['and_tu'] = str_replace(DTP."tweetusers","tu",$qwhr['and']);
 		$qwhr['where_userid'] = getUserWhere($author[userid], FALSE, TRUE);
 		$qwhr['and_userid'] = getUserWhere($author[userid], TRUE, TRUE);
 	} else {

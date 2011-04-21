@@ -39,6 +39,12 @@
 		</div>
 		<div id="content">
 			<h1><?php echo $pageHeader ? p(s($pageHeader, ENT_NOQUOTES), 3, true) : p(s($pageTitle, ENT_NOQUOTES), 3, true); ?></h1>
-			<form id="search" action="<?php echo $path; ?>/search" method="get"><div><input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" /></div></form>
+			<form id="search" action="<?php echo $path; ?>/search" method="get">
+                <div>
+                    <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
+                    <br/><span class="meonly"><?php echo !empty($_SESSION[user])? $_SESSION[user]." only " : "" ;?></span>
+                    <input type="checkbox" name="meonly" checked=checked />
+                </div>
+            </form>
 <?php if($preBody){ echo "\t\t\t" . $preBody . "\n"; } ?>
 			<div id="c"><div id="primary">

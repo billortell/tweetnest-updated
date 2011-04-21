@@ -104,9 +104,14 @@
 				"INNER JOIN `".DTP."tweets` `t` ON `tw`.`tweetid` = `t`.`id` " .
 				"LEFT JOIN `".DTP."tweetusers` `tu` ON `t`.`userid` = `tu`.`userid` " .
 				"WHERE (" . $sqlO . ") AND ((`w`.`tweets` / " . $total . ") < " . $stf . ")" . $extraWhere . " " .
+
+                /** srching amongst the loggedin/session'd user only! */
+                (($_GET[meonly])?$qwhr['and_tu']:"") .
+                        
 				"ORDER BY " . ($sort == "time" ? "`t`.`time` DESC" : "`tw`.`frequency` DESC")
 			);
-			
+
+
 			if($sort == "time"){
 				while($t = $db->fetch($query)){
 					// We don't want duplicates when sorting by time

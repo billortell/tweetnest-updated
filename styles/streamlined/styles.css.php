@@ -24,6 +24,11 @@ body {
 	font-size: small;
 } html>body { font-size: small; }
 
+        span.user_notsame {
+        color: #ff9900;
+        font-weight: bold;
+        }
+
 #container {
 	font-size: 117%;
 }
@@ -195,6 +200,14 @@ h1, h2, h3, h4, h5, h6 {
 	width: 8000px;
 }
 
+         /** added by billortell (via github) **/
+         .tweet a.replyto {
+            color: #333;
+            font-weight: bold;
+        }
+
+
+
 p.meta {
 	font-size: 85%;
 	color: <?php echo css("tweet_meta_text_color"); ?>;
@@ -252,6 +265,11 @@ p.meta a:hover {
 	-o-border-radius: 12px;
 	-khtml-border-radius: 12px;
 }
+
+        #search span.meonly {
+            font: 80% "Helvetica Neue", Helvetica, sans-serif;
+            color: <?php echo css("search_text_color"); ?>;
+        }
 
 #search input.empty {
 	color: <?php echo css("search_placeholder_text_color"); ?>;
@@ -561,6 +579,7 @@ ul#months, #months ul {
 	color: <?php echo css("footer_link_color"); ?>;
 	text-decoration: underline;
 }
+
 <?php
 	if($returnCSS){
 		$css = ob_get_clean();

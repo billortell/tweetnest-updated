@@ -130,6 +130,8 @@
 		}
 		
 		// Checking personal favorites -- scanning all
+        echo l("<div>");
+        echo l("<p>");
 		echo l("\n<strong>Syncing favourites...</strong>\n");
 		$pages    = ceil($total / $maxCount); // Resetting these
 		// $sinceID  = 0;
@@ -150,12 +152,14 @@
 				}
 			}
 			echo l("</ul>");
+            echo l("</p>");
 			if(count($data) > 0){ echo l("<strong>" . count($favs) . "</strong> favorite own tweets on this page\n"); }
 			if(count($data) < ($maxCount - 50)){ break; } // We've reached last page
 		}
 		$db->query("UPDATE `".DTP."tweets` SET `favorite` = '0'"); // Blank all favorites
 		$db->query("UPDATE `".DTP."tweets` SET `favorite` = '1' WHERE `tweetid` IN ('" . implode("', '", $favs) . "')");
 		echo l(good("Updated favorites!"));
+        echo l("</div>");
 	}
 	
 	if($p){
@@ -165,8 +169,11 @@
 		if($db->numRows($q) > 0){
 			while($u = $db->fetch($q)){
 				$uid = preg_replace("/[^0-9]+/", "", $u['userid']);
-				echo l("<strong>Trying to grab from user_id=" . $uid . "...</strong>\n");
+
+                echo l("<div>");
+				echo l("<h4>Trying to grab from user_id=" . $uid . "...</h4>\n");
 				importTweets("user_id=" . $uid);
+                echo l("</div>");
 			}
 		} else {
 			echo l(bad("No users to import to!"));

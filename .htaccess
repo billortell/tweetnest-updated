@@ -1,4 +1,5 @@
 RewriteEngine On
+# as per another fork, with my mods
 RewriteRule ^sort/?$ ./sort.php [L,QSA]
 RewriteRule ^favorites/?$ ./favorites.php [L,QSA]
 RewriteRule ^search/?$ ./search.php [L,QSA]

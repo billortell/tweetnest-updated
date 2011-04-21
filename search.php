@@ -34,6 +34,7 @@
 				: ""
 			)
 		);
+
 	}
 	
 	$pageTitle   = "Searching for \"" . $_GET['q'] . "\"" . ($month ? " in " . date("F Y", mktime(1,0,0,$m,1,$_GET['y'])) : "");
@@ -46,5 +47,7 @@
 ?>
 				<div id="sorter">Sort by <a href="<?php echo $path; ?>/sort?order=relevance&amp;from=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="first<?php if($isRelv){ ?> selected<?php } ?>"><?php if($isRelv){ ?><strong><?php } ?>Relevance<?php if($isRelv){ ?></strong><?php } ?></a><span> </span><a href="<?php echo $path; ?>/sort?order=time&amp;from=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="last<?php if($isTime){ ?> selected<?php } ?>"><?php if($isTime){ ?><strong><?php } ?>Time<?php if($isTime){ ?></strong><?php } ?></a></div>
 <?php
-	echo $tooShort ? "<div class=\"notweets\">Search query too short. Please type at least " . number_format($search->minWordLength) . " characters.</div>" : tweetsHTML($results, "search");
+	echo $tooShort ?
+        "<div class=\"notweets\">Search query too short. Please type at least " . number_format($search->minWordLength) . " characters.</div>"
+        : tweetsHTML($results, "search");
 	require "inc/footer.php";
