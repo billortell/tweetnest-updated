@@ -1,8 +1,8 @@
 <?php
-
+    
 	// TWEET NEST
 	// HTML Header
-	
+
 	header("Content-Type: text/html; charset=utf-8");
 	$path = s(rtrim($config['path'], "/"));
 	$headTitle = "Tweets by @" . s($config['twitter_screenname']) . ($pageTitle ? " / " . p(s($pageTitle), 3) : "");
@@ -70,7 +70,7 @@
         <div style='clear:both;'></div>
         
 
-		<div id="content">
+		<div id="content" class="<?php echo $content_class;?>">
 
 			<h1><?php echo $pageHeader ? p(s($pageHeader, ENT_NOQUOTES), 3, true) : p(s($pageTitle, ENT_NOQUOTES), 3, true); ?></h1>
 

@@ -10,11 +10,15 @@
 		$x      = str_repeat("\t", $tabs); $y = str_repeat("\t", $tabs+1);
 		$url    = explode("?", $_SERVER['REQUEST_URI'], 2);
 		$path   = s(rtrim($config['path'], "/"));
-		$q = $db->query("SELECT MONTH(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS m, YEAR(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS y, COUNT(*) AS c FROM `".DTP."tweets` 
-			".$qwhr['where_userid']." 
-			GROUP BY y, m ORDER BY y DESC, m DESC");
 
-
+        if ( !empty($_GET["q"]) AND $_GET["meonly"]=="on" ) {
+            $q = $db->query("SELECT MONTH(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS m, YEAR(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS y, COUNT(*) AS c FROM `".DTP."tweets`
+                ".$qwhr['where_userid']."
+                GROUP BY y, m ORDER BY y DESC, m DESC");
+        } else {
+            $q = $db->query("SELECT MONTH(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS m, YEAR(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS y, COUNT(*) AS c FROM `".DTP."tweets`
+                GROUP BY y, m ORDER BY y DESC, m DESC");
+        }
 
 		while($r = $db->fetch($q)){
 			$months[] = $r;
@@ -23,7 +27,13 @@
 			$amount++;
 		}
 		$searching = $home ? false : (count($highlightedMonths) > 0);
-		$s = "<ul id=\"months\">\n";
+
+
+
+
+        $s = "";
+
+		$s .= "<ul id=\"months\">\n";
 		if(!$home){
 			$s .= $y . "<li class=\"home\"><a href=\"" . $path . "/\"><span class=\"m" . ($searching ? " ms\"><span class=\"a\">" : "\">") . "Recent tweets" . ($searching ? "</span><br><span class=\"b\"> (exit " . s($filterMode) . ")</span>" : "") . "</span></a></li>\n";
 		}
@@ -66,7 +76,9 @@
 			"<span class=\"n\"> " . number_format($m['c']) . ($cc > 0 ? " <strong>(" . number_format($cc) . ")</strong>" : "") . 
 			"</span><span class=\"p\" style=\"width:" . round((($m['c']/$max)*100), 2) . "%\"></span></a></li>\n";
 		}
-		$s .= $y . "<li class=\"meta\">" . number_format($total) . " total tweets" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
+		$s .= $y . "<li class=\"meta\">" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
+
+        $s .= "<h1 style='float:left;'>" . number_format($total) . "</h1><p style='padding-left: 15px; float:left;'>total tweets</p>";
 		return $s;
 	}
 	

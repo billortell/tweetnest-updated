@@ -1,8 +1,10 @@
 RewriteEngine On
 # as per another fork, with my mods
+RewriteRule ^user/(.*?)$ ./?user=$1 [L,QSA]
 RewriteRule ^sort/?$ ./sort.php [L,QSA]
 RewriteRule ^favorites/?$ ./favorites.php [L,QSA]
 RewriteRule ^search/?$ ./search.php [L,QSA]
 RewriteRule ^searchfeed/?$ ./searchfeed.php [L,QSA]
+RewriteRule ^download/?$ ./download.php [L,QSA]
 RewriteRule ^([0-9]+)/([0-9]+)/?$ ./month.php?y=$1&m=$2 [L,QSA]
 RewriteRule ^([0-9]+)/([0-9]+)/([0-9]+)/?$ ./day.php?y=$1&m=$2&d=$3 [L,QSA]

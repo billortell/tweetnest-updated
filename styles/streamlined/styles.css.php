@@ -63,7 +63,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
 	position: relative;
-	margin: 20px 10px;
+	margin: 20px auto;
+        padding: 5px 15px;
 	overflow: hidden;
 }
 
@@ -165,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 #primary {
 	width: 74%;
 	float: left;
+    padding-right:15px;
 	position: relative;
 }
 
@@ -629,6 +631,16 @@ ul#months, #months ul {
 	color: <?php echo css("footer_link_color"); ?>;
 	text-decoration: underline;
 }
+
+    div.download {
+        padding-left: 150px;
+        background: transparent url(../../img/green-download-icon.png)  left top no-repeat;
+    }
+    div.download_bg {
+        background: transparent url(../../img/download-icon-gray-350x350.png) -125px 0px  no-repeat;
+    }
+
+
 
 <?php
 	if($returnCSS){

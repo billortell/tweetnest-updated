@@ -13,6 +13,7 @@
 
 
 
+
     //	$userid = 'rapextras';
     /***
      * this is whom we're goin' to show...
@@ -21,6 +22,8 @@
      *
      */
     session_start();
+
+    /** @var $u - default show userid */
     $u = "rapextras";
 
     if ( strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/") ) {
@@ -198,6 +201,27 @@
 			array("---", "--", "'", "'", "\"", "\"", "..."),
 			$str) : $str;
 	}
+
+    
+
+    function fetch_tweets($q) {
+        global $db;
+        $array     = is_array($q);
+        $count     = $array ? count($q) : $db->numRows($q);
+        $tweets = "";
+        if($count > 0){
+            if(!$array){
+                while($tweet = $db->fetch($q)){
+                    $tweets[] = $tweet;
+                }
+            } else {
+                $tweets = $q;
+            }
+        }
+        return $tweets;
+    }
+
+
 
 
 	/***

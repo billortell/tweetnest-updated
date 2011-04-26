@@ -91,6 +91,10 @@
 					"INNER JOIN `".DTP."tweetwords` `tw` ON `t`.`id` = `tw`.`tweetid` " .
 					"INNER JOIN `".DTP."words` `w` ON `tw`.`wordid` = `w`.`id` " .
 					"WHERE (" . $sqlO . ") AND ((`w`.`tweets` / " . $total . ") < " . $stf . ") " .
+
+                    /** srching amongst the loggedin/session'd user only! */
+                    (($_GET[meonly])?$qwhr['and_tu']:"") .
+
 					"GROUP BY `y`, `m` ORDER BY `y` DESC, `m` DESC"
 				);
 			}
