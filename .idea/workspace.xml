@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.twitterapi.php" afterPath="$PROJECT_DIR$/inc/class.twitterapi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/loadtweets.php" afterPath="$PROJECT_DIR$/maintenance/loadtweets.php" />
-    </list>
+    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="" />
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -382,7 +377,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added export | user srch tweaks | css mods" />
+    <option name="LAST_COMMIT_MESSAGE" value="rate limit checking incorporated, added funcs to min. api-usage" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -403,6 +398,7 @@
     <MESSAGE value="perfecting multi-user [yes, still]" />
     <MESSAGE value="added slicker search tool/area" />
     <MESSAGE value="added export | user srch tweaks | css mods" />
+    <MESSAGE value="rate limit checking incorporated, added funcs to min. api-usage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
