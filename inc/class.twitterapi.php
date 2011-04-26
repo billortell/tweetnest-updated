@@ -25,14 +25,94 @@
 			"contributors" => "contributors",
 			"user.id"      => "userid"
 		);
-		
+
+        public $xHeaders = array();
+        public $rate_limits;
+
+        
+
+        public function set_xHeaders($file){
+            // x-headers to keep
+            $pm = array(
+                    "X-RateLimit-Limit"=>"hourly_limit",
+                    "X-RateLimit-Remaining"=>"remaining_hits",
+                    "X-RateLimit-Reset"=>"reset_time_in_seconds",
+                    "X-Transaction"=>NULL
+                );
+            $xTmp = array();
+            foreach ($pm as $pmp => $localKey){
+                preg_match('|' . $pmp . ': ([0-9]+)|',$file,$b);
+                $xTmp[$pmp] = (int)$b[1];
+                if ( $localKey ) {
+                    $this->rate_limits->$localKey = $xTmp[$pmp];
+                }
+            }
+            // tack on current location's timestamp for relativity.
+            $xTmp["current"] = time();
+            $xTmp["tz_offset"] = 3600*round(($xTmp["X-Transaction"] - $xTmp["current"])/3600);
+            $this->xHeaders = $xTmp;
+            return $this->get_xHeaders();
+        }
+
+        public function get_xHeaders($p=false){
+            if ( empty($this->xHeaders) )
+                return false;
+            return ( empty( $p ) ? $this->xHeaders : $this->xHeaders[$p] ) ;
+        }
+
+        public function withinLimit(){
+            $xHead = $this->get_xHeaders();
+            return ( empty($xHead) || $xHead['X-RateLimit-Remaining'] > 0 ) ;
+        }
+
+        // returns something like...
+        // {"hourly_limit":150,"reset_time_in_seconds":1303842231,"reset_time":"Tue Apr 26 18:23:51 +0000 2011","remaining_hits":90}
+        public function get_rate_limit_status(){
+            $this->rate_limits = $this->query("1/account/rate_limit_status.json","json",NULL,FALSE);
+            $this->rate_limits->xxx = 0; // should store a caching mechanism - to tell how valid this is... so we don't overcall it.
+            return $this->rate_limits;
+        }
+
+        public function get_hourly_limit(){
+            if ( empty($this->rate_limits) )
+                return false;
+            return $this->rate_limits->hourly_limit;
+        }
+
+        public function get_remaining_hits(){
+            if ( empty($this->rate_limits) )
+                return false;
+            return $this->rate_limits->remaining_hits;
+        }
+
+        public function get_reset_time_in_seconds(){
+            if ( empty($this->rate_limits) )
+                return false;
+            return $this->rate_limits->reset_time_in_seconds;
+        }
+
+        public function get_reset_time(){
+            if ( empty($this->rate_limits) )
+                return false;
+            return $this->rate_limits->reset_time;
+        }
+
 		public function query($path, $format = "json", $auth = NULL, $ssl = true){
 			$format = mb_strtolower(trim($format));
 			$path   = ltrim($path, "/");
 			if($format != "xml" && $format != "json"){ return false; }
 			$url    = "http" . ($ssl ? "s" : "") . "://api.twitter.com/" . $path;
 			$file   = "";
-			
+
+            if ( !empty( $this->rate_limits ) ) {
+                if ( $this->get_remaining_hits() <= 0 ) {
+                    echo l("returning... cuz we're over the limit!\n");
+                    return false;
+                } else {
+                    echo l( $this->get_remaining_hits() - 1 ." calls will remain after this one!\n");
+                }
+            }
+
 			do {
 				if($file != ""){ sleep(2); } // Wait two secs if we got a failwhale
 				$file = getURL($url, $auth);

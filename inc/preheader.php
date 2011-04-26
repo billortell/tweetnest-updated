@@ -88,7 +88,8 @@
 	// Twitter API class
 	require "class.twitterapi.php";
 	$twitterApi = new TwitterApi();
-	
+    $twitterApi->get_rate_limit_status();
+
 	// Search
 	require "class.search.php";
 	$search = new TweetNestSearch();
@@ -143,8 +144,10 @@
 	$author      = $db->fetch($authorQ);
 	$authorextra = unserialize($author['extra']);
 	global $author, $authorextra;
-	
+
+
 	function getURL($url, $auth = NULL){
+        global $twitterApi;
 		// HTTP grabbin' cURL options, also exsecror
 		$httpOptions = array(
 			CURLOPT_FORBID_REUSE   => true,
@@ -157,11 +160,26 @@
 		);
 		$conn = curl_init($url);
 		$o    = $httpOptions;
-		if(is_array($auth) && count($auth) == 2){
-			$o[CURLOPT_USERPWD] = $auth[0] . ":" . $auth[1];
-		}
+        if(is_array($auth) && count($auth) == 2){
+            $o[CURLOPT_USERPWD] = $auth[0] . ":" . $auth[1];
+        }
+
+
+        // return headers on call (if secure post - meaning it's in the header)
+        if( strpos($url,"https") !== FALSE ){
+            $o[CURLOPT_HEADER] = TRUE;
+        }
+        
 		curl_setopt_array($conn, $o);
 		$file = curl_exec($conn);
+
+        // X-Ratelimit-Limit
+        // necessary to store these, if you're not a developer -
+        // using oauth/developer key... in call (auth)
+        $xHeaders = $twitterApi->set_xHeaders($file);
+
+        $info = curl_getinfo($conn);
+
 		if(!curl_errno($conn)){
 			curl_close($conn);
 			return $file;
