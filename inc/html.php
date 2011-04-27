@@ -11,7 +11,7 @@
 		$url    = explode("?", $_SERVER['REQUEST_URI'], 2);
 		$path   = s(rtrim($config['path'], "/"));
 
-        if ( !empty($_GET["q"]) AND $_GET["meonly"]=="on" ) {
+        if ( ( !empty($_GET["q"]) AND $_GET["meonly"]=="on" ) || ( empty($_GET["q"]) AND empty($_GET["meonly"]) ) ) {
             $q = $db->query("SELECT MONTH(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS m, YEAR(FROM_UNIXTIME(`time`" . DB_OFFSET . ")) AS y, COUNT(*) AS c FROM `".DTP."tweets`
                 ".$qwhr['where_userid']."
                 GROUP BY y, m ORDER BY y DESC, m DESC");
@@ -76,8 +76,9 @@
 			"<span class=\"n\"> " . number_format($m['c']) . ($cc > 0 ? " <strong>(" . number_format($cc) . ")</strong>" : "") . 
 			"</span><span class=\"p\" style=\"width:" . round((($m['c']/$max)*100), 2) . "%\"></span></a></li>\n";
 		}
-		$s .= $y . "<li class=\"meta\">" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
+	//	$s .= $y . "<li class=\"meta\">" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
 
+        $s .= $y . "<li class=\"meta\">what? were you looking for more?!</li>\n" . $x . "</ul>\n";
         $s .= "<h1 style='float:left;'>" . number_format($total) . "</h1><p style='padding-left: 15px; float:left;'>total tweets</p>";
 		return $s;
 	}

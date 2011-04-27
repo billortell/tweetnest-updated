@@ -31,12 +31,15 @@
 			<div id="author">
                 <img src="<?php echo s($author['profileimage']); ?>" width="48" height="48" alt="" />
                 <h2>
-                    <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
+                    <a href="user/<?php echo s($config['twitter_screenname']); ?>">
                         <strong><?php echo s($author['realname']); ?></strong>
                         (@<?php echo s($config['twitter_screenname']); ?>)
                     </a>
                 </h2>
-                    <p><?php echo s($author['location']); ?></p>
+                <p><?php echo s($author['location']); ?></p>
+                <p><a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
+                    <?php echo s("stalk me!"); ?>
+                </p>
 			</div>
 			<div id="info">
 				<p>The below is an off-site archive of <strong><a href="<?php echo $path; ?>/">all tweets posted by @<?php echo s($config['twitter_screenname']); ?></a></strong> ever</p>
@@ -59,7 +62,7 @@
                         type in any word, combination of words, we'll find it!
                         <br/>
                         <span class="meonly"><?php echo !empty($_SESSION[user])? "search within <strong>".$_SESSION[user]."</strong> only " : "" ;?></span>
-                        <input type="checkbox" name="meonly" <?php echo $_GET[meonly]?"checked=checked":"";?> />
+                        <input type="checkbox" name="meonly" <?php echo ( $_GET[meonly] || ( $_GET[q] AND !empty($_GET[meonly]) ) ) ? "checked=checked":"";?> />
                     </div>
                 </form>
                 <div style='clear:both;'></div>

@@ -186,8 +186,10 @@
 
         $info = curl_getinfo($conn);
 
-        echo "<h2>".$twitterApi->get_remaining_hits()." Remaining Calls</h2>";
-
+        if( strpos($url,"rate_limit_status") === FALSE ){
+            echo "<h2>".$twitterApi->get_remaining_hits()." Remaining Calls</h2>";
+        }
+        
 		if(!curl_errno($conn)){
 			curl_close($conn);
 			return $file;
@@ -320,4 +322,5 @@
 		$qwhr['where'] = $qwhr['and'] = $qwhr['where_userid'] = $qwhr['and_userid'] = "";
 	}
 	
+
 
