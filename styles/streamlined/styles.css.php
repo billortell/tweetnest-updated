@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
 	position: relative;
-	margin: 20px auto;
+	margin: 5px auto;
         padding: 5px 15px;
 	overflow: hidden;
 }

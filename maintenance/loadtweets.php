@@ -17,8 +17,6 @@
 	require "mheader.php";
 
 
-    echo "<h2>".$twitterApi->get_remaining_hits()." Remaining Calls</h2>";
-
 	// Identifying user
 	if(!empty($_GET['userid']) && is_numeric($_GET['userid'])){
 		$q = $db->query("SELECT * FROM `".DTP."tweetusers` WHERE `userid` = '" . $db->s($_GET['userid']) . "' LIMIT 1");
@@ -43,7 +41,14 @@
 		global $twitterApi;
 		$p = trim($p);
 		if(!$twitterApi->validateUserParam($p)){ return false; }
+
+        // call the api once more!
+        //---------------------------------------
 		$data = $twitterApi->query("1/users/show.json?" . $p);
+
+        // @TODO we should update some sorta prefs on the tweetnest -
+        // -- so it mimics their own twitter account (ie. background, etc...)
+
 		if(is_array($data) && $data[0] === false){ dieout(l(bad("Error: " . $data[1] . "/" . $data[2]))); }
 		return $data->statuses_count;
 	}
@@ -86,11 +91,6 @@
 		if($sinceID){
 			echo l("Newest tweet I've got: <strong>" . $sinceID . "</strong>\n");
 		}
-
-        /***
-         * calls remaining...
-         */
-        echo l("<h1>".$twitterApi->get_remaining_hits()." remaining calls...</h1>");
 
         if ( GET_TWEETS ) {
 

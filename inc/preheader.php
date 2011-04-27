@@ -169,16 +169,24 @@
         if( strpos($url,"https") !== FALSE ){
             $o[CURLOPT_HEADER] = TRUE;
         }
-        
+
 		curl_setopt_array($conn, $o);
 		$file = curl_exec($conn);
+
+        /*** added to parse header - body separation when necc. see above ***/
+        if ( $o[CURLOPT_HEADER] ) {
+            list($headers, $file) = explode("\r\n\r\n", $file, 2);
+        }
 
         // X-Ratelimit-Limit
         // necessary to store these, if you're not a developer -
         // using oauth/developer key... in call (auth)
-        $xHeaders = $twitterApi->set_xHeaders($file);
+        //$xHeaders = $twitterApi->set_xHeaders($file);
+        $xHeaders = $twitterApi->set_xHeaders($headers);
 
         $info = curl_getinfo($conn);
+
+        echo "<h2>".$twitterApi->get_remaining_hits()." Remaining Calls</h2>";
 
 		if(!curl_errno($conn)){
 			curl_close($conn);
