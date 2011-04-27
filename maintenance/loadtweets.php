@@ -203,7 +203,7 @@
 				echo l("<h4>Trying to grab from user_id=" . $uid . "...</h4>\n");
 				importTweets("user_id=" . $uid);
                 echo l("<p>finished with user_id: <strong>$uid</strong></p>");
-                $q = $db->query("UPDATE `".DTP."tweetusers` SET lastupdated = '".time()."' WHERE userid=$uid AND `enabled` = '1'");
+                $qu = $db->query("UPDATE `".DTP."tweetusers` SET lastupdated = '".time()."' WHERE userid=$uid AND `enabled` = '1'");
                 echo l("</div>");
                 sleep(2);
 			}
