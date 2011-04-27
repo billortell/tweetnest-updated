@@ -63,8 +63,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
 	position: relative;
-	margin: 5px auto;
-        padding: 5px 15px;
+	margin: 8px auto;
+    padding: 5px 15px;
 	overflow: hidden;
 }
 
@@ -164,15 +164,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #primary {
-	width: 74%;
+	width: 70%;
 	float: left;
     padding-right:15px;
 	position: relative;
 }
 
 #secondary {
-	margin-left: 76%;
+    width: 26%;
 	font-size: 85%;
+    float:right;
+        padding: 0px;
+        margin-top: 0px;
 }
 
 #primary h1, #content h1 {
@@ -308,9 +311,11 @@ div.search_form{
     background: #ddd;
 }
 div.search_form_toggle {
-    text-align:right;
-    font-size: 80%;
-
+    text-align:left;
+    font-size: 85%;
+        cursor: pointer;
+        float:left;
+        margin-bottom: 10px;
 }
 
 
@@ -408,6 +413,7 @@ ul#months, #months ul {
 	padding: 0;
 	list-style-type: none;
 	border-top: 1px solid <?php echo css("months_border_color"); ?>;
+        margin: 0px;
 }
 
 #months li a {
@@ -639,8 +645,18 @@ ul#months, #months ul {
     div.download_bg {
         background: transparent url(../../img/download-icon-gray-350x350.png) -125px 0px  no-repeat;
     }
+    
 
-
+    div.nest_logo {
+        overflow: auto;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 128px;
+        height: 128px;
+        background: transparent url(<?php echo s($config["logo"]); ?>) no-repeat bottom right;
+        z-index: 100;
+    }
 
 <?php
 	if($returnCSS){

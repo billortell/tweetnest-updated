@@ -26,7 +26,7 @@ $(document).ready(function(){
 
     /** unhide search_big form **/
     $("div.search_form_toggle").bind("click",function(){
-        $(this).next().toggle();
+        $(this).parent().find("div.search_form").toggle();
     })
 
 

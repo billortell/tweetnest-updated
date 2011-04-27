@@ -1,6 +1,13 @@
 			</div>
 			<div id="secondary">
 				<?php echo displayMonths(); ?>
+
+                <!-- ads spot - could put *1* or dozens...  -->
+
+                <?php echo $ad1;?>
+                <?php echo $ad1;?>
+                <?php echo $ad1;?>
+
 			</div>
 		</div>
 		<div id="footer">

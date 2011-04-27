@@ -7,8 +7,12 @@
 	require "mheader.php";
 	
 	echo l("Connecting & parsing...\n");
-	$path = "1/users/show.json?screen_name=" . $config['twitter_screenname'];
-	echo l("Connecting to: <span class=\"address\">" . ls($path) . "</span>\n");
+    if ( empty($_GET["screenname"]) )
+        $path = "1/users/show.json?screen_name=" . $config['twitter_screenname'];
+	else
+        $path = "1/users/show.json?screen_name=" . trim($_GET[screenname]);
+
+    echo l("Connecting to: <span class=\"address\">" . ls($path) . "</span>\n");
 	
 	$data = $twitterApi->query($path);
 	if($data){
