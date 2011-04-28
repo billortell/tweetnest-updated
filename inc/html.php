@@ -147,7 +147,7 @@
 	}
 	
 	function tweetHTML($tweet, $tabs = 4){
-		global $twitterApi;
+		global $twitterApi, $isStatus;
 		$tweetextra = array(); $tweetplace = array();
 		if(!empty($tweet['extra'])){
 			@$tweetextra = unserialize($tweet['extra']);
@@ -158,13 +158,21 @@
 		$rt = (array_key_exists("rt", $tweetextra) && !empty($tweetextra['rt']));
 		$t  = str_repeat("\t", $tabs);
 		if($rt){ $retweet = $tweetextra['rt']; }
-		$d  =   $t . "<div id=\"tweet-" . s($tweet['tweetid']) . "\" class=\"tweet" . (($tweet['type'] == 1) ? " reply" : "") . (($tweet['type'] == 2) ? " retweet" : "") . "\">\n" . 
+
+        $tweet_status_in_reply_to_hlink = "http://twitter.com/" . s($tweetextra['in_reply_to_screen_name']) . "/statuses/" . s($tweetextra['in_reply_to_status_id']) ;
+
+        $tweet_status_hlink = ( APP_STATUS_LOCAL ) ?
+                "" . APP_PATH . "/statuses/" . $tweet['tweetid'] :
+                "http://twitter.com/" . s($rt ? $retweet['screenname'] : $tweet['screenname']) . "/statuses/" . s($rt ? $retweet['tweetid'] : $tweet['tweetid']) ;
+
+
+		$d  =   $t . "<div id=\"tweet-" . s($tweet['tweetid']) . "\" class=\"tweet" . (($tweet['type'] == 1) ? " reply" : "") . (($tweet['type'] == 2) ? " retweet" : "") . (($isStatus) ? " tweetstatus" : "") . "\">\n" .
 				($tweet['favorite'] ? $t . "\t<div class=\"fav\" title=\"A personal favorite\"><span>(A personal favorite)</span></div>\n" : "") .
-				$t . "\t<p class=\"text\">" . ($rt ? "<a class=\"rt\" href=\"http://twitter.com/" . $retweet['screenname'] . "\"><strong>" . $retweet['screenname'] . "</strong></a> " : "") . 
+				$t . "\t<p class=\"text" . "" . "\">" . ($rt ? "<a class=\"rt\" href=\"http://twitter.com/" . $retweet['screenname'] . "\"><strong>" . $retweet['screenname'] . "</strong></a> " : "") .
 				nl2br(p(highlightQuery(linkifyTweet(
 					s(stupefyRaw($rt ? $twitterApi->entityDecode($retweet['text']) : $tweet['text']))
 				), $tweet), 3)) . "</p>\n" . 
-				$t . "\t<p class=\"meta\">\n" . $t . "\t\t<a href=\"http://twitter.com/" . s($rt ? $retweet['screenname'] : $tweet['screenname']) . "/statuses/" . s($rt ? $retweet['tweetid'] : $tweet['tweetid']) . "\" class=\"permalink\">" . date("g:i A, M jS, Y", ($rt ? $retweet['time'] : $tweet['time'])) . "</a>\n" . 
+				$t . "\t<p class=\"meta\">\n" . $t . "\t\t<a href=\"" . $tweet_status_hlink . "\" class=\"permalink\">" . date("g:i A, M jS, Y", ($rt ? $retweet['time'] : $tweet['time'])) . "</a>\n" .
 				$t . "\t\t<span class=\"via\">via " . ($rt ? $retweet['source'] : $tweet['source']) . "</span>\n" .
 
                 /** attached username link if not same as logged in/cached/session'd */
@@ -175,10 +183,9 @@
                 ) .
 
 				($rt ? $t . "\t\t<span class=\"rted\">(retweeted on " . date("g:i A, M jS, Y", $tweet['time']) . " <span class=\"via\">via " . $tweet['source'] . "</span>)</span>\n" : "") . 
-				((!$rt && $tweetextra && @!empty($tweetextra['in_reply_to_status_id'])) ? $t . "\t\t<a class=\"replyto\" href=\"http://twitter.com/" . s($tweetextra['in_reply_to_screen_name']) . "/statuses/" . s($tweetextra['in_reply_to_status_id']) . "\">in reply to " . s($tweetextra['in_reply_to_screen_name']) . "</a>\n" : "") . 
+				((!$rt && $tweetextra && @!empty($tweetextra['in_reply_to_status_id'])) ? $t . "\t\t<a class=\"replyto\" href=\"" . $tweet_status_in_reply_to_hlink . "\">in reply to " . s($tweetextra['in_reply_to_screen_name']) . "</a>\n" : "") .
 				(($tweetplace && @$tweetplace->full_name) ? "\t\t<span class=\"place\">from <a href=\"http://maps.google.com/?q=" . urlencode($tweetplace->full_name) . "\">" . s($tweetplace->full_name) . "</a></span>" : "") .
 				$t . "\t</p>\n" . $t . "</div>\n";
-
 
 		$dd = hook("displayTweet", array($d, $tweet));
         if(!empty($dd)){ $d = $dd[0]; }
@@ -205,6 +212,7 @@
 			} else {
 				$tweets = $q;
 			}
+            
 			foreach($tweets as $tweet){
 				if($tweet['time'] < $first || $first == 0){ $first = $tweet['time']; }
 				if($tweet['time'] > $last){ $last = $tweet['time']; }

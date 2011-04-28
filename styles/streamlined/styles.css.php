@@ -195,6 +195,13 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+        .tweetstatus {
+            border: 0px;
+        }
+        .tweetstatus p {
+            font-size: 150%;
+        }
+
 .tweet .rt {
 	font-weight: bold;
 	background: transparent url(retweet.gif) no-repeat left center;
@@ -622,6 +629,7 @@ ul#months, #months ul {
 #footer {
 	clear: both;
 	margin: 10px auto;
+        margin-top: 40px;
 	padding: 10px;
 	border-top: 1px solid <?php echo css("footer_border_color"); ?>;
 	font-size: 85%;

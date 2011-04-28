@@ -47,7 +47,7 @@ function strCast($v) {
 
 
 /** @var $filename_path - create our own temp file destiny */
-$tmp_filename =  EXPORT_TMP_PREFIX . EXPORT_TIMESTAMP . "." . EXPORT_SUFFIX ;
+$tmp_filename =  EXPORT_TMP_PREFIX . "_" . $_SESSION["user"] . "_" .  EXPORT_TIMESTAMP . "." . EXPORT_SUFFIX ;
 $filename_path = tempnam("/" . realpath(sys_get_temp_dir()) , $tmp_filename);
 $fp = fopen( $filename_path, 'w');
 
@@ -63,26 +63,58 @@ if ( count( $exportArr ) > 0 ) {
 
     /*** let's push it out to the file/window/browser **/
     foreach ($list as $fields) {
-        $fields_orig = $fields;
 
-        unset($fields_orig["extra"]);
-        $fields_extra = unserialize($fields["extra"]);
-        $fields_new = array_merge($fields_orig,$fields_extra);
+        $deny_extra = FALSE;
 
+        if ( $deny_extra ) {
+            unset($fields["extra"]);
+        }
 
-        $suspSerialized = array("coordinates","geo","place","contributors");
+        $fields_new = $fields;
+
+        if ( !empty($fields["extra"]) ) {
+            $fields_extra = unserialize($fields["extra"]);
+        //    $fields_new = array_merge($fields_new,$fields_extra);
+
+            /** definitely get this, if we're tracking 'extra' field data */
+            if ( !empty($fields_extra["retweet_count"]) ) {
+                $fields_new["retweet_count"] = $fields_extra["retweet_count"] ;
+            } else
+                $fields_new["retweet_count"] = 0;
+        }
+
+        // set the default timezone to use. Available since PHP 5.1
+
+        /** condition time */
+        $fields_new["time_ez"] = date("r e",$fields_new["time"]) ;
+
+        /** unset "rt" - as it's superfluous to what we already have! **/
+        unset($fields_new["rt"]);
+        unset($fields_new["id_str"]);
+
+        $suspSerialized = array("rt","coordinates","geo","place","contributors");
         $suspArr = array();
         foreach ( $suspSerialized as $suspKey ) {
-            $unser_susp = unserialize($fields_new[$suspKey]);
-            if ( !empty( $unser_susp ) ) {
-                array_merge($suspArr,$unser_susp);
+            if ( !empty( $fields_new[$suspKey] ) ) {
+                $unser_susp = unserialize($fields_new[$suspKey]);
+                if ( !empty( $unser_susp ) AND is_array($unser_susp) ) {
+
+                //    echo "suspected unser:";
+                //    echo "<pre>";
+                //    print_r($unser_susp);
+                //    echo "</pre>";
+
+                    $unser_susp = array_map("strCast",$unser_susp);
+                    array_merge($suspArr,$unser_susp);
+                }
+            //    $fields_new[$suspKey] = "";
             }
-            $fields_new[$suspKey] = "";
         }
         $fields_new = array_merge($fields_new, $suspArr);
 
         /** remove poss. for scient. notation */
         $fields_new = array_map("strCast",$fields_new);
+
 
         /** check for headings sent... */
         if ( !$col_headings_sent ) {
@@ -95,22 +127,73 @@ if ( count( $exportArr ) > 0 ) {
     }
 
 }
-
 /** close it all off! */
 fclose($fp);
 
 
-/****
- * DOWNLOAD the file
- * ---------------------------------
+/***
+ * determine how we want the fies delivered...
+ * if via .csv or .zip
  */
+$zip = TRUE;
+$fileOnly = TRUE;
 
-header('Content-Length:' . filesize($filename_path));
-header("Content-Disposition: attachment; filename=\"".$filename_base."\"");
+if ( $zip ) {
 
-/** @var $filePointer - which file to connect/read and passthru from */
-$filePointer = fopen($filename_path,"rb");
-fpassthru($filePointer);
+    // incoming parameter to use: $filename_path
+    //----------------------------
+    $directoryToZip="./"; // This will zip all the file(s) in this present working directory
+
+    $outputDir=$_SERVER[DOCUMENT_ROOT].APP_PATH."/temp/"; //Replace "/" with the name of the desired output directory.
+    $zipName="yourtweets.zip";
+
+    include_once("CreateZipFile.inc.php");
+    $createZipFile=new CreateZipFile;
+
+    if ( !$fileOnly ) {
+
+        //Code toZip a directory and all its files/subdirectories
+        $createZipFile->zipDirectory($directoryToZip,$outputDir);
+
+    } else {
+
+        $fileToZip = $filename_path;
+        $fp_main = "yourtweets.csv";
+
+        // Code to Zip a single file
+    //    $createZipFile->addDirectory($outputDir);
+        $fileContents=file_get_contents($filename_path);
+        $createZipFile->addFile($fileContents, $fp_main);
+
+    }
+
+
+    $rand=time();
+    $zipName=$rand."_". $_SESSION["user"] ."_".$zipName;
+    $fd=fopen($outputDir.$zipName, "wb");
+    $out=fwrite($fd,$createZipFile->getZippedfile());
+    fclose($fd);
+
+    $createZipFile->forceDownload($outputDir.$zipName);
+    @unlink($zipName);
+
+} else {
+
+    /****
+     * DOWNLOAD the file
+     * ---------------------------------
+     */
+
+    header('Content-Length:' . filesize($filename_path));
+    header("Content-Disposition: attachment; filename=\"".$filename_base."\"");
+
+    /** @var $filePointer - which file to connect/read and passthru from */
+    $filePointer = fopen($filename_path,"rb");
+    fpassthru($filePointer);
+
+    @unlink($filename_path);
+
+}
 
 /** stop the streaming! */
 exit();

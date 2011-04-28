@@ -3,7 +3,9 @@
 $ad1 = <<< END
 <img src='http://dummyimage.com/175x70.png/f90/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
 END;
-
+$ad2 = <<< END
+<img src='http://dummyimage.com/175x70.png/1e9aff/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
+END;
 
 	// TWEET NEST
 	// HTML Header

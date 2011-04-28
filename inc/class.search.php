@@ -56,7 +56,60 @@
 				}
 			}
 		}
-		
+
+
+        /****
+         * @param  $tnid - tweet nest's twitter status id (tweet id)
+         * @param string $extraWhere
+         * @return array|bool|DB_result|resource
+         */
+        public function query_by_id($tnid, $extraWhere = ""){
+            global $db;
+            global $qwhr_and, $qwhr;
+
+            if ( !empty($extraWhere) ) {
+                $extraWhere = " AND " . $extraWhere;
+            }
+
+            $extraWhere .= " AND t.tweetid = '$tnid' ";
+
+            /***
+             * works!
+             *
+                SELECT `t`.*, `tu`.`screenname`, `tu`.`realname`, `tu`.`profileimage` FROM
+                tn_tweets t
+                LEFT JOIN `tn_tweetusers` `tu` ON `t`.`userid` = `tu`.`userid`
+                WHERE
+                `t`.`tweetid` = '63248179071696896'
+             *
+             */
+            // Do it!
+            $tweets = array();
+            $query  = $db->query(
+                "SELECT t.*, tu.screenname, tu.realname, tu.profileimage " .
+                "FROM ".DTP."tweets t " .
+                "LEFT JOIN `".DTP."tweetusers` `tu` ON `t`.`userid` = `tu`.`userid` " .
+                "WHERE 1 " . $extraWhere . " "
+            );
+
+
+            // Get all instances
+            while($t = $db->fetch($query)){
+                $tweets[] = $t;
+            }
+
+            // How many instances of each tweet? The more, the more relevant it is
+            return $tweets;
+        }
+
+
+
+        /***
+         * @param  $q
+         * @param string $sort
+         * @param string $extraWhere
+         * @return array|bool|DB_result|resource
+         */
 		public function query($q, $sort = "relevance", $extraWhere = ""){
 			global $db;
 			global $qwhr_and, $qwhr;
@@ -85,24 +138,6 @@
 			
 			// Are we just requesting the months?
 			if($sort == "months"){
-
-//echo
-        "SELECT MONTH(FROM_UNIXTIME(`t`.`time`)) AS `m`, YEAR(FROM_UNIXTIME(`t`.`time`)) AS `y`, COUNT(DISTINCT `t`.`id`) AS `c` " .
-        "FROM `".DTP."tweets` `t` " .
-        "INNER JOIN `".DTP."tweetwords` `tw` ON `t`.`id` = `tw`.`tweetid` " .
-        "INNER JOIN `".DTP."words` `w` ON `tw`.`wordid` = `w`.`id` " .
-        "WHERE (" . $sqlO . ") AND ((`w`.`tweets` / " . $total . ") < " . $stf . ") " .
-
-        /** srching amongst the loggedin/session'd user only! */
-        (($_GET[meonly])?$qwhr['and_tu']:"") .
-
-        "GROUP BY `y`, `m` ORDER BY `y` DESC, `m` DESC"
-;
-
-
-                
-
-
            //     exit();
                 
 				return $db->query(
