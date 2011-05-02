@@ -78,8 +78,8 @@
 		}
 	//	$s .= $y . "<li class=\"meta\">" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
 
-        $s .= $y . "<li class=\"meta\">what? were you looking for more?!</li>\n" . $x . "</ul>\n";
-        $s .= "<h1 style='float:left;'>" . number_format($total) . "</h1><p style='padding-left: 15px; float:left;'>total tweets</p>";
+        $s .= $y . "" . $x . "</ul>\n";
+        $s .= "<div style='padding-left: 15px;margin: 10px auto;'><h1 style='text-align:center;margin-bottom:0px; padding-bottom: 0px;'>" . number_format($total) . "</h1><p style='margin-top:0px; text-align:center;'>total tweets</p><div style='clear:both;'></div></div>";
 		return $s;
 	}
 	

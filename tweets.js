@@ -5,7 +5,7 @@
 var searchPlaceholder = "Search for tweets..."
 
 $(document).ready(function(){
-	$("#search input,#search_big input").focus(function(){
+	$("#search input:text,#search_big input:text").focus(function(){
 		if(this.className == "empty"){
 			this.value = ""
 			$(this).removeClass("empty")
@@ -20,8 +20,8 @@ $(document).ready(function(){
 		$("#search input").addClass("empty").val(searchPlaceholder)
 	}
 
-    if($("#search_big input").val() == "" || $("#search_big input").val() == searchPlaceholder){
-        $("#search_big input").addClass("empty").val(searchPlaceholder)
+    if($("#search_big input:text").val() == "" || $("#search_big input:text").val() == searchPlaceholder){
+        $("#search_big input:text").addClass("empty").val(searchPlaceholder)
     }
 
     /** unhide search_big form **/

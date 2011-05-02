@@ -1,10 +1,10 @@
 <?php
 
 $ad1 = <<< END
-<img src='http://dummyimage.com/175x70.png/f90/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
+<img style='margin: 7px auto;' src='http://dummyimage.com/175x70.png/ff5e99/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
 END;
 $ad2 = <<< END
-<img src='http://dummyimage.com/175x70.png/1e9aff/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
+<img style='margin: 7px auto;' src='http://dummyimage.com/175x70.png/1FA9E6/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
 END;
 
 	// TWEET NEST
@@ -42,19 +42,19 @@ END;
                 <div class=nest_logo></div>
                 <?php } ?>
 
-                <img src="<?php echo s($author['profileimage']); ?>" width="48" height="48" alt="" />
+                <img src="<?php echo s($author['profileimage']); ?>" style='margin-top: 5px; margin-bottom: 10px;' width="48" height="48" alt="" />
                 <h2>
                     <a href="<?php echo $path."/user/".s($config['twitter_screenname']); ?>">
                         <strong><?php echo s($author['realname']); ?></strong>
                     </a>
                 </h2>
                 <p>
-                    <strong>@<?php echo s($config['twitter_screenname']); ?></strong> -
                     <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
-                        <?php echo s("stalk me!"); ?>
+                        <?php echo s("u can follow me"); ?>
+                        <strong>@<?php echo s($config['twitter_screenname']); ?></strong>
                     </a>
                 </p>
-                <p><?php echo s($author['location']); ?></p>
+                <p class=location><?php echo s($author['location']); ?></p>
 			</div>
             
 
@@ -78,14 +78,16 @@ END;
 		<div id="content" class="<?php echo $content_class;?>">
 
             <div>
-                <div style='float:right; padding: 10px auto;'>
+                <div style='float:right; padding: 10px auto;font-weight:bold;'>
                     <a href="<?php echo APP_PATH;?>/download">
-                            <strong>download your tweets!</strong>
+                            download your tweets!
                     </a>
                 </div>
 
-                <div class='search_form_toggle'>
-                    <span>use search tool</span>
+                <div class='search_form_toggle' style='float:right; padding: 10px auto;font-weight:bold;'>
+                    <a href="javascript:void(0);">
+                        use search tool
+                    </a>
                 </div>
                 <div style='clear:both;'></div>
 

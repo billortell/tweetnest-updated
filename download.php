@@ -56,6 +56,6 @@
     <div style='clear:both;'></div>
 </div>
 
-    <?php
+<?php
 
-	require "inc/footer.php";
+require "inc/footer.php";

@@ -15,15 +15,15 @@
  */
 
 body {
-	margin: 0 auto;
+	margin: 10px auto;
 	color: <?php echo css("text_color"); ?>;
 	background-color: <?php echo css("content_background_color"); ?>;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: x-small;
 	voice-family: "\"}\"";
 	font-size: small;
-
     width: 720px;
+        border: 1px solid #CCCCCC;
 }
 
 html>body { font-size: small; }
@@ -35,6 +35,7 @@ html>body { font-size: small; }
 
 #container {
 	font-size: 117%;
+        background: #fff;
 }
 
         strong.searchword {
@@ -64,16 +65,13 @@ h1, h2, h3, h4, h5, h6 {
 #content {
 	position: relative;
 	margin: 8px auto;
-    padding: 5px 15px;
+    padding: 5px 20px;
 	overflow: hidden;
 }
 
 #top #author {
 	position: relative;
-	background-color: <?php echo css("top_background_color"); ?>;
-	background-image: <?php echo css("top_background_image"); ?>;
-	background-repeat: <?php echo css("top_background_image_tile"); ?>;
-	background-position: <?php echo css("top_background_image_position"); ?>;
+	background: <?php echo css("top_background_color");?> url(<?php echo APP_PATH;?>/img/004_cloud_large_part_transp.png) 250px -150px no-repeat;
 	color: <?php echo css("top_text_color"); ?>;
 	padding: 20px 10px;
 	min-height: 52px;
@@ -82,6 +80,10 @@ h1, h2, h3, h4, h5, h6 {
 #top #author h2, #top #author p {
 	margin: 0px;
 }
+
+        #author p.location {
+            font-size: 80%;
+        }
 
 #top #author h2 {
 	font-size: 132%;
@@ -115,6 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 #top #info {
 	position: relative;
 	font-size: 85%;
+    padding: 0px 20px;
 	background-color: <?php echo css("top_bar_background_color"); ?>;
 	color: <?php echo css("top_bar_text_color"); ?>;
 	overflow: hidden;
@@ -315,14 +318,13 @@ p.meta a:hover {
 div.search_form{
     padding: 15px 0px;
     margin-bottom: 15px;
-    background: #ddd;
+    background: <?php echo css("top_background_color");?>;
 }
 div.search_form_toggle {
     text-align:left;
-    font-size: 85%;
         cursor: pointer;
-        float:left;
-        margin-bottom: 10px;
+        float:right;
+        margin: 0px 15px 10px 15px;
 }
 
 
@@ -628,11 +630,11 @@ ul#months, #months ul {
 
 #footer {
 	clear: both;
-	margin: 10px auto;
-        margin-top: 40px;
-	padding: 10px;
+    margin-top: 40px;
+	padding: 20px 20px;
 	border-top: 1px solid <?php echo css("footer_border_color"); ?>;
 	font-size: 85%;
+    background: <?php echo APP_MAIN_COLOR;?>;
 	color: <?php echo css("footer_text_color"); ?>;
 }
 
@@ -646,25 +648,47 @@ ul#months, #months ul {
 	text-decoration: underline;
 }
 
-    div.download {
-        padding-left: 150px;
-        background: transparent url(../../img/green-download-icon.png)  left top no-repeat;
-    }
-    div.download_bg {
-        background: transparent url(../../img/download-icon-gray-350x350.png) -125px 0px  no-repeat;
-    }
+div.download {
+    padding-left: 150px;
+    background: transparent url(../../img/green-download-icon.png)  left top no-repeat;
+}
+div.download_bg {
+/*
+background: transparent url(../../img/download-icon-gray-350x350.png) -125px 0px  no-repeat;
+*/
+background: transparent url(../../img/004_cloud_large_part_transp.png) -175px -50px  no-repeat;
+}
     
+div.status {
+    padding: 0 20px 20px 0px;
+}
+div.status_bg {
+    background: transparent url(../../img/004_cloud_large_part_transp.png) -175px -50px  no-repeat;
+}
 
-    div.nest_logo {
-        overflow: auto;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 128px;
-        height: 128px;
-        background: transparent url(<?php echo s($config["logo"]); ?>) no-repeat bottom right;
-        z-index: 100;
-    }
+/*** using birdie lookin' logo
+div.nest_logo {
+    overflow: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 128px;
+    height: 128px;
+    background: transparent url(<?php echo s($config["logo"]); ?>) no-repeat bottom right;
+    z-index: 100;
+}
+***/
+
+div.nest_logo {
+    overflow: auto;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 203px;
+    height: 143px;
+    background: transparent url(<?php echo s($config["logo"]); ?>) no-repeat bottom right;
+    z-index: 100;
+}
 
 <?php
 	if($returnCSS){
