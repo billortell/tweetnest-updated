@@ -29,26 +29,3 @@
 	}
 	if($web && empty($config['maintenance_http_password'])){ die("No maintenance HTTP password. Please use the command line to run these scripts, or add a password in the <code>maintenance_http_password</code> section in <code>inc/config.php</code>."); } // Comment out this line to enable password-less HTTP maintenance access
 	
-	function l($html){ // Display log line in correct way, depending on HTTP or not
-		global $web;
-		return $web ? str_replace("</li>\n", "</li>", $html) : strip_tags(str_replace("<li>", "<li> - ", $html));
-	}
-	
-	function ls($html){
-		global $web;
-		return $web ? s($html) : $html; // Only encode HTML special chars if we're actually in a HTML doc
-	}
-	
-	function good($html){
-		return "<strong class=\"good\">" . $html . "</strong>";
-	}
-	
-	function bad($html){
-		return "<strong class=\"bad\">" . $html . "</strong>";
-	}
-	
-	function dieout($html){
-		echo $html;
-		require "mfooter.php";
-		die();
-	}

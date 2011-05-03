@@ -2,7 +2,7 @@
 	// PONGSOCKET TWEET ARCHIVE
 	// HTML output templates
 	
-	function displayMonths($tabs = 4){
+	function displayMonths($tabs = 4, $justTotal=FALSE){
 		global $db, $selectedDate, $highlightedMonths, $filterMode, $home, $config;
 		//added by Bill Ortell
 		global $qwhr, $qwhr_and;
@@ -79,7 +79,12 @@
 	//	$s .= $y . "<li class=\"meta\">" . ($amount > 0 ? " <!-- approx. " . round(number_format($total / $amount), 2) . " monthly -->" : "") . "</li>\n" . $x . "</ul>\n";
 
         $s .= $y . "" . $x . "</ul>\n";
-        $s .= "<div style='padding-left: 15px;margin: 10px auto;'><h1 style='text-align:center;margin-bottom:0px; padding-bottom: 0px;'>" . number_format($total) . "</h1><p style='margin-top:0px; text-align:center;'>total tweets</p><div style='clear:both;'></div></div>";
+
+        if ( $justTotal )
+            $s = "<div style='padding-left: 15px;margin: 10px auto;'><h1 style='text-align:center;margin-bottom:0px; padding-bottom: 0px;'>" . number_format($total) . "</h1><p style='margin-top:0px; text-align:center;'>total tweets</p><div style='clear:both;'></div></div>";
+        else
+            $s .= "<div style='padding-left: 15px;margin: 10px auto;'><h1 style='text-align:center;margin-bottom:0px; padding-bottom: 0px;'>" . number_format($total) . "</h1><p style='margin-top:0px; text-align:center;'>total tweets</p><div style='clear:both;'></div></div>";
+
 		return $s;
 	}
 	
@@ -161,9 +166,10 @@
 
         $tweet_status_in_reply_to_hlink = "http://twitter.com/" . s($tweetextra['in_reply_to_screen_name']) . "/statuses/" . s($tweetextra['in_reply_to_status_id']) ;
 
+        $tweet_status_on_twitter = "http://twitter.com/" . s($rt ? $retweet['screenname'] : $tweet['screenname']) . "/statuses/" . s($rt ? $retweet['tweetid'] : $tweet['tweetid']) ;
         $tweet_status_hlink = ( APP_STATUS_LOCAL ) ?
                 "" . APP_PATH . "/statuses/" . $tweet['tweetid'] :
-                "http://twitter.com/" . s($rt ? $retweet['screenname'] : $tweet['screenname']) . "/statuses/" . s($rt ? $retweet['tweetid'] : $tweet['tweetid']) ;
+                $tweet_status_on_twitter ;
 
 
 		$d  =   $t . "<div id=\"tweet-" . s($tweet['tweetid']) . "\" class=\"tweet" . (($tweet['type'] == 1) ? " reply" : "") . (($tweet['type'] == 2) ? " retweet" : "") . (($isStatus) ? " tweetstatus" : "") . "\">\n" .
@@ -186,6 +192,11 @@
 				((!$rt && $tweetextra && @!empty($tweetextra['in_reply_to_status_id'])) ? $t . "\t\t<a class=\"replyto\" href=\"" . $tweet_status_in_reply_to_hlink . "\">in reply to " . s($tweetextra['in_reply_to_screen_name']) . "</a>\n" : "") .
 				(($tweetplace && @$tweetplace->full_name) ? "\t\t<span class=\"place\">from <a href=\"http://maps.google.com/?q=" . urlencode($tweetplace->full_name) . "\">" . s($tweetplace->full_name) . "</a></span>" : "") .
 				$t . "\t</p>\n" . $t . "</div>\n";
+
+        $link_single_status_to_twitter = TRUE;
+        $d .= ( $link_single_status_to_twitter AND $isStatus ) ? "
+                <p class=meta>view on <a href='$tweet_status_on_twitter' target='_blank'>twitter</a></p>
+            " : "" ;
 
 		$dd = hook("displayTweet", array($d, $tweet));
         if(!empty($dd)){ $d = $dd[0]; }
@@ -220,11 +231,11 @@
 				$s .= tweetHTML($tweet, $tabs);
 				$i++;
 				if($mode == "month" && $i >= $maxTweets){
-					$s .= $t . "<div class=\"truncated\"><strong>There&#8217;s more tweets in this month!</strong> <span>Go up and <a href=\"#top\">select a date</a> to see more &uarr;</span></div>\n";
+					$s .= $t . "<div class=\"truncated\"><strong>There are more tweets in this month!</strong> <span>Go up and <a href=\"#top\">select a date</a> to see more &uarr;</span></div>\n";
 					break;
 				}
 				if($mode == "search" && $i >= $maxTweets){
-					$s .= $t . "<div class=\"truncated\"><strong>There&#8217;s even more search results!</strong> <span>Go up and <a href=\"#top\">add a couple of words</a> to your query to find the specific tweets you want &uarr;</span></div>\n";
+					$s .= $t . "<div class=\"truncated\"><strong>There are even more search results!</strong> <span>Go up and <a href=\"#top\">add a couple of words</a> to your query to find the specific tweets you want &uarr;</span></div>\n";
 					break;
 				}
 			}
@@ -413,7 +424,7 @@
 	function _linkifyTweet_link($a, $b, $c, $d){
 		$url = stripslashes($a);
 		$end = stripslashes($d);
-		return "<a class=\"link\" href=\"" . ($b[0] == "w" ? "http://" : "") . str_replace("\"", "&quot;", $url) . "\">" . (strlen($url) > 25 ? substr($url, 0, 24) . "..." : $url) . "</a>" . $end;
+		return "<a class=\"link\"  target=\"_blank\"href=\"" . ($b[0] == "w" ? "http://" : "") . str_replace("\"", "&quot;", $url) . " \">" . (strlen($url) > 25 ? substr($url, 0, 24) . "..." : $url) . "</a>" . $end;
 	}
 	function _linkifyTweet_at($a, $b){
 		return "<span class=\"at\">@</span><a class=\"user\" href=\"http://twitter.com/" . $a . "\">" . $a . "</a>";

@@ -106,10 +106,10 @@
 
             if ( !empty( $this->rate_limits ) ) {
                 if ( $this->get_remaining_hits() <= 0 ) {
-                    echo l("returning... cuz we're over the limit!\n");
+                    echo ( !DEBUG_MAINTENANCE ) ? "" : l("returning... cuz we're over the limit!\n");
                     return false;
                 } else {
-                    echo l( $this->get_remaining_hits() - 1 ." calls will remain after this one!\n");
+                    echo ( !DEBUG_MAINTENANCE ) ? "" : l( $this->get_remaining_hits() - 1 ." calls will remain after this one!\n");
                 }
             }
 

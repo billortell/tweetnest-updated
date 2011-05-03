@@ -7,6 +7,38 @@ $ad2 = <<< END
 <img style='margin: 7px auto;' src='http://dummyimage.com/175x70.png/1FA9E6/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
 END;
 
+$ga_top = <<< END
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4505986509846513";
+/* tweetstuff_468x15 */
+google_ad_slot = "9802607339";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+END;
+
+
+
+
+
+/***
+ * login in/out link for navbar area...
+ */
+$loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
+                    <a href='".APP_PATH."/auth/?action=logout'>
+                            Logout
+                    </a>
+                " : "
+                    <a href='".APP_PATH."/auth/'>
+                            Login & download tweets now!
+                    </a>
+                " ;
+
+
 	// TWEET NEST
 	// HTML Header
 
@@ -36,7 +68,7 @@ END;
 	<div id="container">
 		<div id="top">
 
-			<div id="author">
+            <div id="author">
                 
                 <?php if ( $config["logo"] ) { ?>
                 <div class=nest_logo></div>
@@ -49,17 +81,18 @@ END;
                     </a>
                 </h2>
                 <p>
-                    <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
-                        <?php echo s("u can follow me"); ?>
+                    <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>" target="_blank">
+                        <?php echo s(""); ?>
                         <strong>@<?php echo s($config['twitter_screenname']); ?></strong>
                     </a>
                 </p>
-                <p class=location><?php echo s($author['location']); ?></p>
+                <p class=location style='display:none;'><?php echo s($author['location']); ?></p>
 			</div>
             
 
 			<div id="info">
-				<p>The below is an off-site archive of all tweets posted by <strong >@<?php echo s($config['twitter_screenname']); ?></strong> ever</p>
+
+                <p>The below is an off-site archive of all tweets posted by <strong >@<?php echo s($config['twitter_screenname']); ?></strong> ever</p>
 
                 <?php if($config['follow_me_button']){ ?>
                 <p class="follow"><a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
@@ -78,18 +111,24 @@ END;
 		<div id="content" class="<?php echo $content_class;?>">
 
             <div>
-                <div style='float:right; padding: 10px auto;font-weight:bold;'>
-                    <a href="<?php echo APP_PATH;?>/download">
-                            download your tweets!
-                    </a>
+
+                <div id=navbar>
+                    <div style='float:right; padding: 10px auto;font-weight:bold;'>
+                        <?php echo $loginout_url; ?>
+                    </div>
+                    <div style='float:right; padding: 10px auto; font-weight:bold;'>
+                        <a href="<?php echo APP_PATH;?>/download">
+                                download your tweets!
+                        </a>
+                    </div>
+                    <div class='search_form_toggle' style='float:right; padding: 10px auto;font-weight:bold;'>
+                        <a href="javascript:void(0);">
+                            use search tool
+                        </a>
+                    </div>
+                    <div style='clear:both;'></div>
                 </div>
 
-                <div class='search_form_toggle' style='float:right; padding: 10px auto;font-weight:bold;'>
-                    <a href="javascript:void(0);">
-                        use search tool
-                    </a>
-                </div>
-                <div style='clear:both;'></div>
 
                 <div class='search_form' style='display:none;'>
 
@@ -114,23 +153,28 @@ END;
             <!-- separation of title and 'ads' on right? -->
 
             <div style='float:left; width: 70%;'>
+
                 <h1><?php echo $pageHeader ? p(s($pageHeader, ENT_NOQUOTES), 3, true) : p(s($pageTitle, ENT_NOQUOTES), 3, true); ?></h1>
 
                 <?php if ($pageTitleSearchTerms) : ?>
                 <h2><strong class="searchword"><?php echo $pageTitleSearchTerms;?></strong></h2>
                 <?php endif; ?>
-                <div style='display:none;'>
-                    <form id="search" action="<?php echo $path; ?>/search" method="get">
-                        <div>
-                            <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
-                            <br/><span class="meonly"><?php echo !empty($_SESSION[user])? $_SESSION[user]." only " : "" ;?></span>
-                            <input type="checkbox" name="meonly" checked=checked />
-                        </div>
-                    </form>
-                </div>
+
             </div>
 
 
+            <div style='float:right; width: 26%;font-size: 85%;'>
+                <?php //echo displayMonths(4,TRUE);?>
+            </div>
+
+
+
+
+
             <div style="clear:both;"></div>
-<?php if($preBody){ echo "\t\t\t" . $preBody . "\n"; } ?>
-			<div id="c"><div id="primary">
+
+            <?php if($preBody){ echo "\t\t\t" . $preBody . "\n"; } ?>
+
+            <?php//  echo $ga_top;?>
+
+            <div id="c"><div id="primary">

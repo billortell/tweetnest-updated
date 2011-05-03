@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/styles/streamlined/styles.css.php" mnemonic="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/004_cloud_large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/004_cloud_large_part_transp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/004_cloud_medium_65.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/004_cloud_small_40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/stopwords.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/download.php" afterPath="$PROJECT_DIR$/download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.twitterapi.php" afterPath="$PROJECT_DIR$/inc/class.twitterapi.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/footer.php" afterPath="$PROJECT_DIR$/inc/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/html.php" afterPath="$PROJECT_DIR$/inc/html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status.php" afterPath="$PROJECT_DIR$/status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/loadtweets.php" afterPath="$PROJECT_DIR$/maintenance/loadtweets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/loaduser.php" afterPath="$PROJECT_DIR$/maintenance/loaduser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/mpreheader.php" afterPath="$PROJECT_DIR$/maintenance/mpreheader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/streamlined/styles.css.php" afterPath="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tweets.js" afterPath="$PROJECT_DIR$/tweets.js" />
     </list>
@@ -37,64 +41,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="footer.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="24" selection-start="3378" selection-end="3378" vertical-scroll-proportion="52.923077">
+              <folding>
+                <marker date="1304428080920" expanded="true" signature="1701:1920" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="1701:1920" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="1708:1920" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="1708:1920" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2801:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2801:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2823:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2823:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2840:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2840:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2871:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="2871:3058" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3179:3245" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3179:3245" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3419:3482" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3419:3482" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3855:3964" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="3855:3964" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4383:4467" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4383:4467" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4402:4467" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4402:4467" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4751:4834" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="4751:4834" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5027:5100" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5027:5100" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5362:5463" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5362:5463" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5392:5463" placeholder="..." />
+                <marker date="1304428080920" expanded="true" signature="5392:5463" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="153" column="13" selection-start="7549" selection-end="7558" vertical-scroll-proportion="-4.76">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preheader.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="586" column="12" selection-start="20457" selection-end="20457" vertical-scroll-proportion="-12.28">
+              <folding>
+                <marker date="1304435195582" expanded="true" signature="19600:19641" placeholder="/*** * Autho..." />
+                <marker date="1304435195582" expanded="true" signature="19600:19641" placeholder="/*** * Autho..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="30" selection-start="384" selection-end="384" vertical-scroll-proportion="0.039906103">
+            <state line="3" column="73" selection-start="112" selection-end="112" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loaduser.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maintenance/loaduser.php">
+      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="28" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+            <state line="34" column="27" selection-start="931" selection-end="931" vertical-scroll-proportion="0.1359447">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="download.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/download.php">
+      <file leaf-file-name="stopwords.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/stopwords.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="21" selection-start="897" selection-end="933" vertical-scroll-proportion="0.0">
+            <state line="0" column="57" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="status.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/status.php">
+      <file leaf-file-name="location.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extensions/location.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="29" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
+            <state line="6" column="24" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="export.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/export.php">
+      <file leaf-file-name="day.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="8" selection-start="3885" selection-end="3885" vertical-scroll-proportion="0.0">
+            <state line="22" column="10" selection-start="1050" selection-end="1050" vertical-scroll-proportion="-10.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="styles.css.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="22" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="images.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extensions/images.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="24" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.0">
+            <state line="75" column="0" selection-start="1462" selection-end="1462" vertical-scroll-proportion="-8.4">
               <folding />
             </state>
           </provider>
@@ -115,22 +171,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/inc/preheader.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/maintenance/loaduser.php" />
-        <option value="$PROJECT_DIR$/select.php" />
-        <option value="$PROJECT_DIR$/inc/class.search.php" />
-        <option value="$PROJECT_DIR$/inc/export.php" />
-        <option value="$PROJECT_DIR$/inc/html.php" />
-        <option value="$PROJECT_DIR$/tweets.js" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/download.php" />
-        <option value="$PROJECT_DIR$/status.php" />
-        <option value="$PROJECT_DIR$/inc/config.php" />
-        <option value="$PROJECT_DIR$/inc/footer.php" />
-        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
-        <option value="$PROJECT_DIR$/inc/header.php" />
-        <option value="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
+        <option value="$PROJECT_DIR$/inc/class.twitterapi.php" />
+        <option value="$PROJECT_DIR$/maintenance/mpreheader.php" />
+        <option value="$PROJECT_DIR$/maintenance/loadtweets.php" />
+        <option value="$PROJECT_DIR$/loaduser.php" />
         <option value="$PROJECT_DIR$/auth/index.php" />
+        <option value="$PROJECT_DIR$/inc/header.php" />
+        <option value="$PROJECT_DIR$/inc/stopwords.txt" />
+        <option value="$PROJECT_DIR$/inc/html.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/loadtweets.php" />
+        <option value="$PROJECT_DIR$/inc/preheader.php" />
+        <option value="$PROJECT_DIR$/deleteuser.php" />
+        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
+        <option value="$PROJECT_DIR$/inc/config.php" />
       </list>
     </option>
   </component>
@@ -204,6 +260,94 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="streamlined" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maintenance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetnest-updated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -236,6 +380,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="options.searchVisible" value="true" />
@@ -274,8 +419,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\projects\tweetnest-updated\auth" />
       <recent name="C:\xampp\htdocs\projects\tweetnest-updated" />
+      <recent name="C:\xampp\htdocs\projects\tweetnest-updated\auth" />
       <recent name="C:\xampp\htdocs\projects\tweetnest-updated\img" />
     </key>
   </component>
@@ -329,9 +474,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="21" width="1203" height="645" extended-state="0" />
+    <frame x="40" y="46" width="1205" height="645" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4004065" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -339,14 +485,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22456141" sideWeight="0.39468303" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16788322" sideWeight="0.3527454" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24649122" sideWeight="0.35365853" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605955" sideWeight="0.35365853" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -399,114 +544,148 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/examples/tweet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/examples/streaming.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="44" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0">
+        <state line="80" column="24" selection-start="3378" selection-end="3378" vertical-scroll-proportion="52.923077">
+          <folding>
+            <marker date="1304428080920" expanded="true" signature="1701:1920" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="1701:1920" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="1708:1920" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="1708:1920" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2801:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2801:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2823:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2823:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2840:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2840:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2871:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="2871:3058" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3179:3245" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3179:3245" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3419:3482" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3419:3482" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3855:3964" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="3855:3964" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4383:4467" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4383:4467" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4402:4467" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4402:4467" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4751:4834" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="4751:4834" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5027:5100" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5027:5100" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5362:5463" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5362:5463" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5392:5463" placeholder="..." />
+            <marker date="1304428080920" expanded="true" signature="5392:5463" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/images.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="24" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.08755761">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
+    <entry file="file://$PROJECT_DIR$/extensions/location.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+        <state line="6" column="24" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/examples/oob.php">
+    <entry file="file://$PROJECT_DIR$/inc/stopwords.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="1" selection-start="984" selection-end="984" vertical-scroll-proportion="-0.3517588">
+        <state line="0" column="57" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/examples/rss.php">
+    <entry file="file://$PROJECT_DIR$/inc/class.db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/tmhOAuth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="11" selection-start="449" selection-end="449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tweets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="9" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+        <state line="69" column="24" selection-start="2205" selection-end="2205" vertical-scroll-proportion="0.33179724">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="75" selection-start="15745" selection-end="15768" vertical-scroll-proportion="0.0">
+        <state line="153" column="13" selection-start="7549" selection-end="7558" vertical-scroll-proportion="-4.76">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth.php">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="698" column="124" selection-start="23948" selection-end="23959" vertical-scroll-proportion="-5.2">
+        <state line="8" column="48" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tmhOAuth2/examples/xauth.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7114094">
+        <state line="59" column="0" selection-start="1930" selection-end="1930" vertical-scroll-proportion="0.33179724">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TwitterApp.php">
+    <entry file="file://$PROJECT_DIR$/loaduser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="271" selection-end="271" vertical-scroll-proportion="-0.43087557">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="999" selection-end="999" vertical-scroll-proportion="0.2327791">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/TwitterAppInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="11" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.25345623">
+        <state line="3" column="0" selection-start="44" selection-end="150" vertical-scroll-proportion="-1.9615384">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="384" selection-end="384" vertical-scroll-proportion="0.039906103">
+        <state line="3" column="73" selection-start="112" selection-end="112" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadtweets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="379" selection-end="379" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deleteuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="12" selection-start="472" selection-end="472" vertical-scroll-proportion="0.7672209">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="586" column="12" selection-start="20457" selection-end="20457" vertical-scroll-proportion="-12.28">
+          <folding>
+            <marker date="1304435195582" expanded="true" signature="19600:19641" placeholder="/*** * Autho..." />
+            <marker date="1304435195582" expanded="true" signature="19600:19641" placeholder="/*** * Autho..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="0" selection-start="1462" selection-end="1462" vertical-scroll-proportion="-8.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="27" selection-start="931" selection-end="931" vertical-scroll-proportion="0.1359447">
           <folding />
         </state>
       </provider>

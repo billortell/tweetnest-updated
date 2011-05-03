@@ -69,9 +69,18 @@ h1, h2, h3, h4, h5, h6 {
 	overflow: hidden;
 }
 
+        /** bill's add **/
+        #top {
+            background: transparent url(<?php echo APP_PATH; ?>/img/blue_grad.png) 0px 0px repeat-x;
+        }
+
+
 #top #author {
 	position: relative;
-	background: <?php echo css("top_background_color");?> url(<?php echo APP_PATH;?>/img/004_cloud_large_part_transp.png) 250px -150px no-repeat;
+/***
+    background: <?php echo css("top_background_color");?> url(<?php echo APP_PATH; ?>/img/004_cloud_large_part_transp.png) 250px -150px no-repeat;
+***/
+    background: transparent url(<?php echo APP_PATH;?>/img/004_cloud_large_part_transp.png) 250px -150px no-repeat;
 	color: <?php echo css("top_text_color"); ?>;
 	padding: 20px 10px;
 	min-height: 52px;
@@ -324,8 +333,11 @@ div.search_form_toggle {
     text-align:left;
         cursor: pointer;
         float:right;
-        margin: 0px 15px 10px 15px;
 }
+
+        div#navbar div {
+            margin: 0px 5px 10px 5px;
+        }
 
 
 

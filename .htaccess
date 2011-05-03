@@ -1,6 +1,9 @@
 RewriteEngine On
 # as per another fork, with my mods
 RewriteRule ^user/(.*?)/?$ ./?user=$1 [L,QSA]
+RewriteRule ^loaduser/(.*?)/?$ ./loaduser.php?user=$1&loadtype=user [L,QSA]
+RewriteRule ^loadtweets/(.*?)/?$ ./loadtweets.php?user=$1&loadtype=tweets [L,QSA]
+RewriteRule ^deleteuser/(.*?)/?$ ./deleteuser.php?user=$1 [L,QSA]
 RewriteRule ^statuses/([0-9]+)/?$ ./status.php?tnid=$1 [L,QSA]
 RewriteRule ^sort/?$ ./sort.php [L,QSA]
 RewriteRule ^favorites/?$ ./favorites.php [L,QSA]

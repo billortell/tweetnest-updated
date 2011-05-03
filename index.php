@@ -4,7 +4,6 @@
     // PONGSOCKET TWEET ARCHIVE
     // Front page
 
-
 	require "inc/preheader.php";
 
 	$qsql = "SELECT `".DTP."tweets`.*, `".DTP."tweetusers`.`screenname`, `".DTP."tweetusers`.`realname`, `".DTP."tweetusers`.`profileimage` FROM `".DTP."tweets`
@@ -12,10 +11,7 @@
 		".$qwhr['where']."
 		ORDER BY `".DTP."tweets`.`time` DESC LIMIT ".DEFAULT_SHOW_LIMIT;
 
-
 	$q = $db->query($qsql);
-
-
 
 	$pageHeader = "Recent tweets";
 	$home       = true;
