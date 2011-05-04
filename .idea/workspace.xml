@@ -4,15 +4,16 @@
     <bookmark url="file://$PROJECT_DIR$/styles/streamlined/styles.css.php" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="fixed oauth to join, load profile / tweets">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deleteuser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/CreateZipFile.inc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/TwitterApp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tmhOAuth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loadtweets.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loaduser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day.php" afterPath="$PROJECT_DIR$/day.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/month.php" afterPath="$PROJECT_DIR$/month.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchfeed.php" afterPath="$PROJECT_DIR$/searchfeed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/streamlined/styles.css.php" afterPath="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +36,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loadtweets.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="loadtweets.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="24" selection-start="205" selection-end="205" vertical-scroll-proportion="0.26327434">
+            <state line="40" column="14" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preheader.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="386" column="28" selection-start="11265" selection-end="11265" vertical-scroll-proportion="1.3098592">
+              <folding>
+                <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -409,7 +421,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="multi-user, oauth, working" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed oauth to join, load profile / tweets" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -437,6 +449,7 @@
     <MESSAGE value="multiple tweaks/fixes (yes, again!) but multi-user is coming along :)" />
     <MESSAGE value="tweaks, .zip download added, ads on sidebar, single status added" />
     <MESSAGE value="multi-user, oauth, working" />
+    <MESSAGE value="fixed oauth to join, load profile / tweets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -460,16 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="47" selection-start="188" selection-end="188" vertical-scroll-proportion="0.15212528">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="34" selection-start="1981" selection-end="2002" vertical-scroll-proportion="0.41564792">
-          <folding>
-            <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
-            <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -583,8 +586,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="24" selection-start="205" selection-end="205" vertical-scroll-proportion="0.26327434">
+        <state line="40" column="14" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="386" column="28" selection-start="11265" selection-end="11265" vertical-scroll-proportion="1.3098592">
+          <folding>
+            <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
+          </folding>
         </state>
       </provider>
     </entry>
