@@ -49,8 +49,9 @@
      */
 	require "config.php";
 
-    $u = $config['twitter_screenname'];
 
+ $u = $config['twitter_screenname'];
+ $u = $_SESSION['user'];
 
     
     /***
@@ -61,23 +62,34 @@
      */
     if ( !empty($_GET[user]) ) {
 
+    //    echo "setting user... to $_GET[user]";
+
         /** user to view...  */
         $_SESSION["user"] = $_GET["user"];
+        $_SESSION["tempuser"] = $_SESSION["user"];
+
 
       //  } elseif ( empty($_SESSION["user"] ) ) {
     } elseif ( !empty($_SESSION[tmhOauth]->screen_name) ) {
 
-        /** if no request is made, default to the owners' stuff! */
+    //    echo "setting user... to auth'd... ".$_SESSION[tmhOauth]->screen_name;
+         /** if no request is made, default to the owners' stuff! */
         $_SESSION["user"] = $_SESSION[tmhOauth]->screen_name;
+        $_SESSION["tempuser"] = $_SESSION["user"];
 
     } else {
 
         /** if no request is made, default to the owners' stuff! */
-        $_SESSION["user"] = $config['twitter_screenname'];
+        if ( $_SESSION["tempuser"] )
+            $_SESSION["user"] = $_SESSION["tempuser"];
+        else
+            $_SESSION["user"] = $config['twitter_screenname'];
+     //   echo "setting user... to default: ".$_SESSION["user"];
 
     }
 
-
+// $u = $config['twitter_screenname'];
+// $u = $_SESSION['user'];
 
 
 
@@ -164,6 +176,49 @@
 	$authorextra = unserialize($author['extra']);
 	global $author, $authorextra;
 
+
+    function display_user_profile($profile){
+        if ( empty($profile) )
+            return;
+
+        ob_start();
+        ?>
+            <div class='user_profile'>
+                <img src="<?php echo s($profile['profileimage']); ?>" style='margin-top: 5px; margin-bottom: 10px;' width="48" height="48" alt="" />
+                <h2>
+                        <strong><?php echo s($profile['realname']); ?></strong>
+                </h2>
+                <p>
+                    <a href="<?php echo APP_PATH."/user/".s($profile['screenname']); ?>">
+                        <strong>@<?php echo s($profile['screenname']); ?></strong>
+                    </a>
+                </p>
+            </div>
+    <?php
+        return ob_get_clean();
+    }
+
+    /***
+     * @return array list of users..... and their first tweet!?
+     */
+    function user_list($retArr = FALSE){
+        global $db;
+        $q = $db->query("SELECT * FROM `".DTP."tweetusers`");
+        $user_list = array();
+        while($user = $db->fetch($q)){
+            $user_list[] = $user;
+        }
+
+        if ( $retArr )
+            return $user_list;
+
+
+        $user_list_str = "";
+        foreach ( $user_list as $user ) {
+            $user_list_str .= display_user_profile($user);
+        }
+        return $user_list_str;
+    }
 
 	function getURL($url, $auth = NULL){
         global $twitterApi;
@@ -458,6 +513,8 @@
         else
             $path = "1/users/show.json?screen_name=" . trim($_GET[screenname]);
 
+
+
         echo ( !$debug ) ? "" : l("Connecting to: <span class=\"address\">" . ls($path) . "</span>\n");
 
         $data = $twitterApi->query($path);
@@ -506,6 +563,14 @@
 
         /** delete the user now... */
         $db->query("DELETE FROM `".DTP."tweetusers` WHERE `screenname` = '" . $db->s($screenname) . "'");
+
+        if ( $_SESSION[tmhOauth]->screen_name == $screenname ) {
+            unset($_SESSION[tmhOauth]);
+            unset($_SESSION["user"]);
+            unset($_SESSION["authtoken"]);
+            unset($_SESSION["authsecret"]);
+
+        }
     }
 
 
@@ -541,14 +606,18 @@
         $config['twitter_screenname'] = $u;
 
 	} else {
-	
+
 		/***
 		 *		assign user to view...
 		 **/
         $u = $use_user = ( empty( $_SESSION["user"] ) ) ? $config['twitter_screenname'] : $_SESSION["user"] ;
-		$config['twitter_screenname'] = $use_user;
+	//	$config['twitter_screenname'] = $use_user;
 	
 	}
+
+
+
+
 
 
 
@@ -564,16 +633,23 @@
     global $author, $authorextra;
 
 
+
+
+
+
+
+
     /***
      * check to see if they're in our dB
      * ------------------------------------
      */
+
     if ( $_SESSION[tmhOauth] ) {
 
         /** override the tmhOauth screen_name */
     //    $_SESSION[tmhOauth]->screen_name = "GingerB42";
 
-        $use_user = $_SESSION[tmhOauth]->screen_name;
+        $u = $use_user = $_SESSION[tmhOauth]->screen_name;
 
         $authorQ     = $db->query("SELECT * FROM `".DTP."tweetusers`
             WHERE `screenname` = '" . $db->s($use_user) . "'
@@ -617,13 +693,15 @@
              * -----------------------
              */
             case "tweets":
-                header("Location: ".APP_PATH."/loaduser/".$_SESSION[tmhOauth]->screen_name);
-                exit();
+            //    header("Location: ".APP_PATH."/loaduser/".$_SESSION[tmhOauth]->screen_name);
+            //    exit();
                 break;
 
         }
 
     }
+
+
 
 	/***
 	 *		setup where clauses

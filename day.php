@@ -22,7 +22,9 @@
 	$selectedDate = array("y" => $_GET['y'], "m" => $m, "d" => $d);
 	$pageTitle    = date("F jS, Y", mktime(1,0,0,$m,$d,$_GET['y']));
 	$preBody      = displayDays($_GET['y'], $m);
-	
+
+    $content_class = "archive_day_bg";
+
 	require "inc/header.php";
 	echo tweetsHTML($q, "day");
 	require "inc/footer.php";

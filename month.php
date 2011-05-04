@@ -17,7 +17,9 @@
 	$selectedDate = array("y" => $_GET['y'], "m" => $m, "d" => 0);
 	$pageTitle    = date("F Y", mktime(1,0,0,$m,1,$_GET['y']));
 	$preBody      = displayDays($_GET['y'], $m);
-	
+
+    $content_class = "archive_month_bg";
+
 	require "inc/header.php";
 	echo tweetsHTML($q, "month");
 	require "inc/footer.php";

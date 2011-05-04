@@ -39,7 +39,9 @@
 	$SearchFeed->title = $pageTitle;
 	$SearchFeed->link = sprintf("http://%s%s",$_SERVER["HTTP_HOST"],$path);
 	$SearchFeed->description = $pageTitle;
-	
+
+
+if ( !empty($results) ) {
 	foreach($results as $result){
 		$item = new FeedItem();
 		$item->title = $result['text'];
@@ -48,5 +50,6 @@
 		$item->description = $result['text'];
 		$SearchFeed->addItem($item);
 	}
+}
 
 	$SearchFeed->outputFeed("ATOM1.0");

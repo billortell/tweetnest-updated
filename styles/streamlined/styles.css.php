@@ -329,6 +329,7 @@ div.search_form{
     margin-bottom: 15px;
     background: <?php echo css("top_background_color");?>;
 }
+        
 div.search_form_toggle {
     text-align:left;
         cursor: pointer;
@@ -338,9 +339,6 @@ div.search_form_toggle {
         div#navbar div {
             margin: 0px 5px 10px 5px;
         }
-
-
-
 
         #search span.meonly {
             font: 80% "Helvetica Neue", Helvetica, sans-serif;
@@ -664,18 +662,20 @@ div.download {
     padding-left: 150px;
     background: transparent url(../../img/green-download-icon.png)  left top no-repeat;
 }
+
 div.download_bg {
-/*
-background: transparent url(../../img/download-icon-gray-350x350.png) -125px 0px  no-repeat;
-*/
-background: transparent url(../../img/004_cloud_large_part_transp.png) -175px -50px  no-repeat;
+    background: transparent url(../../img/004_cloud_large_part_transp_10perc.png) -175px -50px  no-repeat;
 }
-    
+
+div.archive_month_bg, div.archive_day_bg {
+    background: transparent url(../../img/004_cloud_medium_part_transp_10perc.png) -75px -10px  no-repeat;
+}
+
 div.status {
     padding: 0 20px 20px 0px;
 }
 div.status_bg {
-    background: transparent url(../../img/004_cloud_large_part_transp.png) -175px -50px  no-repeat;
+    background: transparent url(../../img/004_cloud_large_part_transp_10perc.png) -175px -50px  no-repeat;
 }
 
 /*** using birdie lookin' logo

@@ -71,19 +71,21 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
             <div id="author">
                 
                 <?php if ( $config["logo"] ) { ?>
-                <div class=nest_logo></div>
+                <a href="<?php echo APP_PATH;?>">
+                    <div class=nest_logo></div>
+                </a>
                 <?php } ?>
 
                 <img src="<?php echo s($author['profileimage']); ?>" style='margin-top: 5px; margin-bottom: 10px;' width="48" height="48" alt="" />
                 <h2>
-                    <a href="<?php echo $path."/user/".s($config['twitter_screenname']); ?>">
+                    <a href="<?php echo $path."/user/".s($author['screenname']); ?>">
                         <strong><?php echo s($author['realname']); ?></strong>
                     </a>
                 </h2>
                 <p>
-                    <a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>" target="_blank">
+                    <a href="http://twitter.com/<?php echo s($author['screenname']); ?>" target="_blank">
                         <?php echo s(""); ?>
-                        <strong>@<?php echo s($config['twitter_screenname']); ?></strong>
+                        <strong>@<?php echo s($author['screenname']); ?></strong>
                     </a>
                 </p>
                 <p class=location style='display:none;'><?php echo s($author['location']); ?></p>
@@ -92,7 +94,7 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 
 			<div id="info">
 
-                <p>The below is an off-site archive of all tweets posted by <strong >@<?php echo s($config['twitter_screenname']); ?></strong> ever</p>
+                <p>The below is an off-site archive of all tweets posted by <strong >@<?php echo s($author['screenname']); ?></strong> ever</p>
 
                 <?php if($config['follow_me_button']){ ?>
                 <p class="follow"><a href="http://twitter.com/<?php echo s($config['twitter_screenname']); ?>">
@@ -124,6 +126,11 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
                     <div class='search_form_toggle' style='float:right; padding: 10px auto;font-weight:bold;'>
                         <a href="javascript:void(0);">
                             use search tool
+                        </a>
+                    </div>
+                    <div style='float:right; padding: 10px auto; font-weight:bold;'>
+                        <a href="<?php echo APP_PATH;?>/users">
+                                user list
                         </a>
                     </div>
                     <div style='clear:both;'></div>
