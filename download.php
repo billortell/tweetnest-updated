@@ -1,19 +1,19 @@
 <?php
     require "inc/preheader.php";
     
-    $qsql = "SELECT `".DTP."tweets`.*, `".DTP."tweetusers`.`screenname`, `".DTP."tweetusers`.`realname`, `".DTP."tweetusers`.`profileimage` FROM `".DTP."tweets`
-        LEFT JOIN `".DTP."tweetusers` ON `".DTP."tweets`.`userid` = `".DTP."tweetusers`.`userid`
-        ".$qwhr['where']."
-        ORDER BY `".DTP."tweets`.`time` DESC LIMIT ".DEFAULT_SHOW_LIMIT;
-
-    $q = $db->query($qsql);
-
 
     /****
      * retrieve my personal tweets!
      * -----------------------------------
      */
-    if ( $_GET["action"]=="export" ){
+    if ( $_GET["action"] == "export" ){
+
+        $qsql = "SELECT `".DTP."tweets`.*, `".DTP."tweetusers`.`screenname`, `".DTP."tweetusers`.`realname`, `".DTP."tweetusers`.`profileimage` FROM `".DTP."tweets`
+            LEFT JOIN `".DTP."tweetusers` ON `".DTP."tweets`.`userid` = `".DTP."tweetusers`.`userid`
+            ".$qwhr['where']."
+            ORDER BY `".DTP."tweets`.`time`";
+
+        $q = $db->query($qsql);
 
         $exportArr      = fetch_tweets($q);
 
@@ -23,6 +23,16 @@
 
         require_once("inc/export.php");
         exit();
+
+    } else {
+
+        $qsql = "SELECT `".DTP."tweets`.*, `".DTP."tweetusers`.`screenname`, `".DTP."tweetusers`.`realname`, `".DTP."tweetusers`.`profileimage` FROM `".DTP."tweets`
+            LEFT JOIN `".DTP."tweetusers` ON `".DTP."tweets`.`userid` = `".DTP."tweetusers`.`userid`
+            ".$qwhr['where']."
+            ORDER BY `".DTP."tweets`.`time` DESC LIMIT ".DEFAULT_SHOW_LIMIT;
+
+        $q = $db->query($qsql);
+
 
     }
 

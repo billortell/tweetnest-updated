@@ -4,16 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/styles/streamlined/styles.css.php" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="fixed oauth to join, load profile / tweets">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deleteuser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/CreateZipFile.inc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/TwitterApp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tmhOAuth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loadtweets.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/loaduser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users.php" />
+    <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/download.php" afterPath="$PROJECT_DIR$/download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/streamlined/styles.css.php" afterPath="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,13 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preheader.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="preheader.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/preheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="386" column="28" selection-start="11265" selection-end="11265" vertical-scroll-proportion="1.3098592">
+            <state line="251" column="36" selection-start="7384" selection-end="7387" vertical-scroll-proportion="-7.1960783">
               <folding>
                 <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="download.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="22" selection-start="810" selection-end="810" vertical-scroll-proportion="-15.038462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="14" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.36299765">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,7 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/inc/stopwords.txt" />
         <option value="$PROJECT_DIR$/deleteuser.php" />
         <option value="$PROJECT_DIR$/searchfeed.php" />
         <option value="$PROJECT_DIR$/users.php" />
@@ -89,13 +100,14 @@
         <option value="$PROJECT_DIR$/day.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/inc/config.php" />
-        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
         <option value="$PROJECT_DIR$/deleteme.html" />
         <option value="$PROJECT_DIR$/loaduser.php" />
         <option value="$PROJECT_DIR$/loadtweets.php" />
         <option value="$PROJECT_DIR$/inc/preheader.php" />
         <option value="$PROJECT_DIR$/inc/header.php" />
         <option value="$PROJECT_DIR$/auth/index.php" />
+        <option value="$PROJECT_DIR$/download.php" />
+        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
       </list>
     </option>
   </component>
@@ -421,7 +433,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed oauth to join, load profile / tweets" />
+    <option name="LAST_COMMIT_MESSAGE" value="completing git repo - with extra files" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -450,18 +462,13 @@
     <MESSAGE value="tweaks, .zip download added, ads on sidebar, single status added" />
     <MESSAGE value="multi-user, oauth, working" />
     <MESSAGE value="fixed oauth to join, load profile / tweets" />
+    <MESSAGE value="&#10;" />
+    <MESSAGE value="completing git repo - with extra files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/loaduser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="285" selection-end="285" vertical-scroll-proportion="0.12990196">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loadtweets.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="50" selection-start="527" selection-end="527" vertical-scroll-proportion="-15.038462">
@@ -563,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="18" selection-start="897" selection-end="933" vertical-scroll-proportion="-12.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/status.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="31" selection-start="446" selection-end="455" vertical-scroll-proportion="0.309795">
@@ -593,10 +593,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/preheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="386" column="28" selection-start="11265" selection-end="11265" vertical-scroll-proportion="1.3098592">
+        <state line="251" column="36" selection-start="7384" selection-end="7387" vertical-scroll-proportion="-7.1960783">
           <folding>
             <marker date="1304522174469" expanded="true" signature="21642:21683" placeholder="/*** * Autho..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="22" selection-start="810" selection-end="810" vertical-scroll-proportion="-15.038462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="14" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.36299765">
+          <folding />
         </state>
       </provider>
     </entry>
