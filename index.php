@@ -1,6 +1,5 @@
 <?php
 
-
     // PONGSOCKET TWEET ARCHIVE
     // Front page
 
@@ -13,7 +12,7 @@
 
 	$q = $db->query($qsql);
 
-	$pageHeader = "Recent tweets";
+	$pageHeader = $_SESSION["user"] . "'s recent tweets";
 	$home       = true;
 
 	require "inc/header.php";

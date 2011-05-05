@@ -26,19 +26,16 @@
     global $isMaint;
     $isMaint = strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/");
 
+    /***
+     * current file we're hitting.../calling...
+     */
+    $current_url_file = basename($_SERVER["SCRIPT_NAME"]);
+
+    global $isStatus;
+    $isStatus = ( $current_url_file == "status.php" );
 
 
 
-    /** @var $u - default show userid */
-//    $u = "rapextras";
-
-    if ( strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/") ) {
-
-    //    session_destroy();
-    //    session_start();
-    //    session_regenerate_id();
-        
-    }
 
 
 
@@ -50,8 +47,8 @@
 	require "config.php";
 
 
- $u = $config['twitter_screenname'];
- $u = $_SESSION['user'];
+     $u = $config['twitter_screenname'];
+     $u = $_SESSION['user'];
 
     
     /***
@@ -63,7 +60,6 @@
     if ( !empty($_GET[user]) ) {
 
     //    echo "setting user... to $_GET[user]";
-
         /** user to view...  */
         $_SESSION["user"] = $_GET["user"];
         $_SESSION["tempuser"] = $_SESSION["user"];
@@ -601,9 +597,8 @@
      */
 
 	if ( $isMaint ) {
-	
-	//	echo strpos($_SERVER["SCRIPT_URI"],$config["path"]."/maintenance/");
-        $config['twitter_screenname'] = $u;
+
+    //    $config['twitter_screenname'] = $u;
 
 	} else {
 

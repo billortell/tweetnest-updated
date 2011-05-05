@@ -1,5 +1,8 @@
 RewriteEngine On
 # as per another fork, with my mods
+
+RewriteRule ^remote/user/(.*?)/?$ ./?user=$1&remote=1  [L,QSA]
+
 RewriteRule ^user/(.*?)/?$ ./?user=$1 [L,QSA]
 RewriteRule ^users/?$ ./users.php [L,QSA]
 RewriteRule ^loaduser/(.*?)/?$ ./loaduser.php?screenname=$1&loadtype=user [L,QSA]

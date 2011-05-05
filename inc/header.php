@@ -55,7 +55,7 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="An archive of all tweets written by <?php echo s(rtrim($author['realname'], ".")); ?>." />
 	<meta name="author" content="<?php echo s($author['realname']); ?>" />
-	<link rel="stylesheet" href="<?php echo s($styleFile); ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo s($styleFile); ?>?csstype=<?php echo $csstype;?>" type="text/css" />
 	<?php if($isSearch):?>
 	<link rel="alternate" type="application/atom+xml" href="<?php echo $path; ?>/searchfeed?q=<?php echo s($searchQuery); ?>" title="Atom Feed" />	
 	<?php endif;?>
@@ -66,6 +66,8 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 </head>
 <body>
 	<div id="container">
+
+        <?php if ( APP_SHOW_HEADER_SECTION ) { ?>
 		<div id="top">
 
             <div id="author">
@@ -90,7 +92,7 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
                 </p>
                 <p class=location style='display:none;'><?php echo s($author['location']); ?></p>
 			</div>
-            
+
 
 			<div id="info">
 
@@ -107,6 +109,7 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 			</div>
 
 		</div>
+        <?php } ?>
 
 
 
@@ -114,10 +117,15 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 
             <div>
 
+                <?php if ( APP_SHOW_NAVBAR ) { ?>
                 <div id=navbar>
-                    <div style='float:right; padding: 10px auto;font-weight:bold;'>
+
+                    <!-- login/out url link -->
+                    <div style='float:left; padding: 10px auto;font-weight:bold;'>
                         <?php echo $loginout_url; ?>
                     </div>
+
+                    <!-- download tweets, search, user list nav bar links -->
                     <div style='float:right; padding: 10px auto; font-weight:bold;'>
                         <a href="<?php echo APP_PATH;?>/download">
                                 download your tweets!
@@ -133,8 +141,11 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
                                 user list
                         </a>
                     </div>
+
+
                     <div style='clear:both;'></div>
                 </div>
+                <?php } ?>
 
 
                 <div class='search_form' style='display:none;'>
@@ -180,8 +191,9 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
 
             <div style="clear:both;"></div>
 
+            <?php if ( APP_SHOW_ARCHIVE_CHART ) { ?>
             <?php if($preBody){ echo "\t\t\t" . $preBody . "\n"; } ?>
+            <?php } ?>
 
-            <?php//  echo $ga_top;?>
 
             <div id="c"><div id="primary">

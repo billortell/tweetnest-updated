@@ -1,5 +1,7 @@
 <?php
-	error_reporting(0);
+
+    error_reporting(0);
+
 	if($returnCSS){
 		ob_start();
 	} else {
@@ -15,15 +17,23 @@
  */
 
 body {
-	margin: 10px auto;
+    margin: 0px auto;
 	color: <?php echo css("text_color"); ?>;
-	background-color: <?php echo css("content_background_color"); ?>;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: x-small;
 	voice-family: "\"}\"";
 	font-size: small;
+
+    <?php if ( !APP_BODY_WIDTH_100 ) { ?>
     width: 720px;
-        border: 1px solid #CCCCCC;
+    <?php } else { ?>
+    width: 100%;
+    <?php } ?>
+
+    <?php if ( APP_SHOW_BODY_BORDER ) { ?>
+    border: 1px solid #CCCCCC;
+    background-color: <?php echo css("content_background_color"); ?>;
+    <?php } ?>
 }
 
 html>body { font-size: small; }
@@ -36,6 +46,7 @@ html>body { font-size: small; }
 #container {
 	font-size: 117%;
         background: #fff;
+        margin-top: 0px;
 }
 
         strong.searchword {
@@ -64,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content {
 	position: relative;
-	margin: 8px auto;
+	margin: 0px auto;
     padding: 5px 20px;
 	overflow: hidden;
 }
@@ -176,9 +187,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #primary {
-	width: 70%;
-	float: left;
+    <?php if ( APP_SHOW_SIDEBAR ) { ?>
+
+    width: 70%;
+    float: left;
     padding-right:15px;
+
+    <?php } else { ?>
+
+    width: 100%;
+    margin: 0px auto;
+
+    <?php }  ?>
+
 	position: relative;
 }
 
@@ -337,7 +358,7 @@ div.search_form_toggle {
 }
 
         div#navbar div {
-            margin: 0px 5px 10px 5px;
+            margin: 8px 5px 10px 5px;
         }
 
         #search span.meonly {
