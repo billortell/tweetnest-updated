@@ -75,7 +75,6 @@ class TwitterAppInterface extends TwitterApp {
     }
 
     function confDir($fe) {
-
         if (!file_exists($fe)) {
             if ($md = @mkdir($fe, 0777) && $od = @chmod($fe, 0777))
                 return true;

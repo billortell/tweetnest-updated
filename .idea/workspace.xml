@@ -6,15 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/index.php" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\projects\tweetnest-updated\temp\test.html" afterPath="$PROJECT_DIR$/tmp/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/footer.php" afterPath="$PROJECT_DIR$/inc/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/download.php" afterPath="$PROJECT_DIR$/download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/export.php" afterPath="$PROJECT_DIR$/inc/export.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/TwitterAppInterface.php" afterPath="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/loadtweets.php" afterPath="$PROJECT_DIR$/maintenance/loadtweets.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maintenance/mpreheader.php" afterPath="$PROJECT_DIR$/maintenance/mpreheader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples/index.php" afterPath="$PROJECT_DIR$/samples/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/streamlined/styles.css.php" afterPath="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tweets.js" afterPath="$PROJECT_DIR$/tweets.js" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,25 +41,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="25" selection-start="1732" selection-end="1732" vertical-scroll-proportion="-2.6078432">
-              <folding>
-                <marker date="1304612545673" expanded="true" signature="1701:1920" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="1708:1920" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="2832:3215" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="2854:3215" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="2922:3215" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="2953:3215" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="3336:3396" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="3568:3631" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="3976:4079" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="4515:4619" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="4534:4619" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="5947:6048" placeholder="..." />
-                <marker date="1304612545673" expanded="true" signature="5977:6048" placeholder="..." />
-              </folding>
+            <state line="136" column="21" selection-start="5675" selection-end="5675" vertical-scroll-proportion="0.043589745">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="120" column="26" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="download.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="3" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="export.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/export.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwitterAppInterface.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/TwitterAppInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,25 +98,34 @@
       <file leaf-file-name="styles.css.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="62" selection-end="62" vertical-scroll-proportion="-3.4">
+            <state line="538" column="27" selection-start="11170" selection-end="11170" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/config.php">
+      <file leaf-file-name="tweets.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tweets.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="30" selection-start="776" selection-end="780" vertical-scroll-proportion="0.58679706">
+            <state line="35" column="40" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mpreheader.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maintenance/mpreheader.php">
+      <file leaf-file-name="class.db.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class.db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="9" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+            <state line="26" column="9" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="7" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,7 +143,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="19" selection-start="3011" selection-end="3011" vertical-scroll-proportion="-5.923077">
+            <state line="81" column="22" selection-start="2730" selection-end="2730" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,10 +152,17 @@
       <file leaf-file-name="preheader.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/preheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="-7.8461537">
-              <folding>
-                <marker date="1304616726084" expanded="true" signature="21530:21571" placeholder="/*** * Autho..." />
-              </folding>
+            <state line="711" column="25" selection-start="23919" selection-end="23919" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadtweets.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="108" selection-start="1331" selection-end="1351" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,7 +170,7 @@
       <file leaf-file-name=".htaccess" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="30" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+            <state line="15" column="16" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,22 +191,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/loadtweets.php" />
-        <option value="$PROJECT_DIR$/auth/index.php" />
-        <option value="$PROJECT_DIR$/download.php" />
-        <option value="$PROJECT_DIR$/samples/css/print.css" />
-        <option value="$PROJECT_DIR$/samples/css/main.css" />
-        <option value="$PROJECT_DIR$/samples/index.html" />
-        <option value="$PROJECT_DIR$/inc/footer.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/styles/styles.local.css" />
-        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
-        <option value="$PROJECT_DIR$/inc/header.php" />
-        <option value="$PROJECT_DIR$/inc/preheader.php" />
-        <option value="$PROJECT_DIR$/samples/index.php" />
+        <option value="$PROJECT_DIR$/inc/footer.php" />
         <option value="$PROJECT_DIR$/maintenance/mpreheader.php" />
+        <option value="$PROJECT_DIR$/maintenance/loadtweets.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/samples/index.php" />
+        <option value="$PROJECT_DIR$/auth/index.php" />
+        <option value="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
+        <option value="$PROJECT_DIR$/inc/export.php" />
+        <option value="$PROJECT_DIR$/download.php" />
+        <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
+        <option value="$PROJECT_DIR$/tweets.js" />
+        <option value="$PROJECT_DIR$/inc/preheader.php" />
         <option value="$PROJECT_DIR$/inc/config.php" />
+        <option value="$PROJECT_DIR$/inc/header.php" />
       </list>
     </option>
   </component>
@@ -185,7 +236,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -205,100 +255,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="streamlined" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="samples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="samples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maintenance" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,13 +265,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="113" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="109" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="109" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="114" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="784" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="788" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="784" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="109" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="108" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -333,6 +292,13 @@
   </component>
   <component name="PublishConfig" serverName="splitbuy.me" serverId="967fb1d6-fbdf-4c58-918f-23896ec5ed5d">
     <servers>
+      <server id="2b771416-42ec-482a-b83f-09e26cbcaa6c">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/httpdocs/tweetnest-updated" local="$PROJECT_DIR$" web="/tweetnest-updated" />
+          </mappings>
+        </serverdata>
+      </server>
       <server id="45d8290f-8ca5-4c60-b22a-895e86ae80b2">
         <serverdata>
           <mappings>
@@ -373,7 +339,7 @@
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugSession" factoryName="Remote" temporary="true">
       <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" value="http://projects.localhost.com/projects/tweetnest-updated/samples/index.html" />
       </JSRemoteDebuggerConfigurationSettings>
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
@@ -431,24 +397,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="52" width="1205" height="645" extended-state="0" />
+    <frame x="41" y="30" width="1203" height="645" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4004065" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4207317" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22456141" sideWeight="0.39468303" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16788322" sideWeight="0.3527454" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12982456" sideWeight="0.40447155" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605955" sideWeight="0.5792683" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20614035" sideWeight="0.40447155" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5955285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34349594" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -469,7 +435,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweaks, minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="major error fixes..." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -501,130 +467,94 @@
     <MESSAGE value="&#10;" />
     <MESSAGE value="completing git repo - with extra files" />
     <MESSAGE value="tweaks, minor changes" />
+    <MESSAGE value="major error fixes..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
+    <entry file="file://$PROJECT_DIR$/maintenance/mpreheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="14" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.17256637">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="22" selection-start="810" selection-end="810" vertical-scroll-proportion="0.91784036">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="1178" selection-end="1192" vertical-scroll-proportion="0.6238938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/css/print.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="42" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.8333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="479" column="20" selection-start="21811" selection-end="21811" vertical-scroll-proportion="0.31924883">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="25" selection-start="1732" selection-end="1732" vertical-scroll-proportion="-2.6078432">
-          <folding>
-            <marker date="1304612545673" expanded="true" signature="1701:1920" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="1708:1920" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="2832:3215" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="2854:3215" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="2922:3215" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="2953:3215" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="3336:3396" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="3568:3631" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="3976:4079" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="4515:4619" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="4534:4619" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="5947:6048" placeholder="..." />
-            <marker date="1304612545673" expanded="true" signature="5977:6048" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="62" selection-end="62" vertical-scroll-proportion="-3.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="-7.8461537">
-          <folding>
-            <marker date="1304616726084" expanded="true" signature="21530:21571" placeholder="/*** * Autho..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="19" selection-start="3011" selection-end="3011" vertical-scroll-proportion="-5.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maintenance/mpreheader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="9" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+        <state line="136" column="21" selection-start="5675" selection-end="5675" vertical-scroll-proportion="0.043589745">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="30" selection-start="776" selection-end="780" vertical-scroll-proportion="0.58679706">
+        <state line="120" column="26" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="3" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TwitterAppInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/streamlined/styles.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="538" column="27" selection-start="11170" selection-end="11170" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="40" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class.db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="9" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="7" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="26" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="22" selection-start="2730" selection-end="2730" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="711" column="25" selection-start="23919" selection-end="23919" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maintenance/loadtweets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="108" selection-start="1331" selection-end="1351" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="16" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>

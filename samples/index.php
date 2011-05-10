@@ -14,7 +14,7 @@
 
         var ifrm_user = "sidhale";
 
-        var ifrm_url = "http://beta.rap-extras.com/projects/nest/";
+        var ifrm_url = "http://tweetaculo.us/";
 
         /** show a part. user **/
         ifrm_url += (ifrm_user == "" ) ? "" : 'user/' + ifrm_user ;
@@ -82,7 +82,7 @@
             overflow: auto;
             width: 203px;
             height: 143px;
-            background: transparent url(/projects/nest/img/004_cloud.png) no-repeat bottom left;
+            background: transparent url(/img/004_cloud.png) no-repeat bottom left;
             z-index: 100;
         }
         #fixedPanel {

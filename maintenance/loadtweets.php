@@ -42,6 +42,7 @@
 	} else {
         $dttest = time() - LAST_UPDATED_GAP;
 		$q = $db->query("SELECT * FROM `".DTP."tweetusers` WHERE `lastupdated` < $dttest AND `enabled` = '1'");
+        $users_updated = 0;
 		if($db->numRows($q) > 0){
 			while($u = $db->fetch($q)){
 				$uid = preg_replace("/[^0-9]+/", "", $u['userid']);
@@ -52,8 +53,12 @@
                 echo l("<p>finished with user_id: <strong>".$u['realname']."</strong></p>");
                 $qu = $db->query("UPDATE `".DTP."tweetusers` SET lastupdated = '".time()."' WHERE userid=$uid AND `enabled` = '1'");
                 echo l("</div>");
-                sleep(2);
+                $users_updated++;
 
+                if ( $users_updated < LAST_UPDATED_LIMIT )
+                    sleep(2);
+                else
+                    break;
 			}
 		} else {
 			echo l(bad("No users to import to!"));

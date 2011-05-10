@@ -145,6 +145,11 @@ if ( $zip ) {
     $directoryToZip="./"; // This will zip all the file(s) in this present working directory
 
     $outputDir=$_SERVER[DOCUMENT_ROOT].APP_PATH."/temp/"; //Replace "/" with the name of the desired output directory.
+
+//echo "outputDir: ".$outputDir."<br>";
+$outputDir=$_SERVER[DOCUMENT_ROOT].dirname($_SERVER["SCRIPT_NAME"])."/temp/"; //Replace "/" with the name of the desired output directory.
+//echo "outputDir: ".$outputDir."<br>";
+//exit();
     $zipName="yourtweets.zip";
 
     include_once("CreateZipFile.inc.php");

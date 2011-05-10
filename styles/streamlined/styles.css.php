@@ -50,7 +50,7 @@ html>body { font-size: small; }
 }
 
         strong.searchword {
-            background: #FF5E99;
+            background: <?php echo APP_MAIN_CONTRAST_COLOR; ?>;
             color:#fff;
             text-shadow: none;
         }
@@ -414,8 +414,9 @@ div.search_form_toggle {
 }
 
 #sorter a.selected {
-	background-color: <?php echo css("months_background_color_hover"); ?>;
+	background-color: <?php echo APP_MAIN_COLOR; ?>;
 	font-weight: bold;
+        color: white;
 }
 
 #sorter span {
@@ -503,7 +504,7 @@ ul#months, #months ul {
 }
 
 #months li a:hover .p {
-	background-color: <?php echo css("months_graph_color_hover"); ?>;
+	background-color: <?php echo APP_MAIN_CONTRAST_COLOR; ?>;
 }
 
 #months li a:hover .m {

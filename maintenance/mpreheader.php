@@ -9,7 +9,8 @@
 	require $dir . "/../inc/preheader.php";
 	date_default_timezone_set($config['timezone']);
 	$path = rtrim($config['path'], "/");
-	
+
+
 	// Maintenance HTTP password
 	if($web && !empty($config['maintenance_http_password'])){
         

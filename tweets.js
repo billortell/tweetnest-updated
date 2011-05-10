@@ -29,6 +29,14 @@ $(document).ready(function(){
         $(this).parent().parent().find("div.search_form").toggle();
     })
 
+    /** hover assoc. for month archive picking... **/
+    $('#months li').hover(function(){
+        $(this).addClass("selected");
+    }, function(){
+        $(this).removeClass("selected");
+    })
+
+
 
 	// Hover associations
 	$("a.picl").each(function(){

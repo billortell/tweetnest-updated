@@ -1,6 +1,7 @@
 RewriteEngine On
 # as per another fork, with my mods
 
+
 RewriteRule ^remote/user/(.*?)/?$ ./?user=$1&remote=1  [L,QSA]
 
 RewriteRule ^user/(.*?)/?$ ./?user=$1 [L,QSA]
@@ -16,3 +17,10 @@ RewriteRule ^searchfeed/?$ ./searchfeed.php [L,QSA]
 RewriteRule ^download/?$ ./download.php [L,QSA]
 RewriteRule ^([0-9]+)/([0-9]+)/?$ ./month.php?y=$1&m=$2 [L,QSA]
 RewriteRule ^([0-9]+)/([0-9]+)/([0-9]+)/?$ ./day.php?y=$1&m=$2&d=$3 [L,QSA]
+
+# since nothing special... let's see what we have...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# finally..
+#RewriteRule ^(.*)$ ./index.php [QSA,L]

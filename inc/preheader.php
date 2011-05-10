@@ -64,6 +64,7 @@
         $_SESSION["user"] = $_GET["user"];
         $_SESSION["tempuser"] = $_SESSION["user"];
 
+        $u = $_SESSION["tempuser"];
 
       //  } elseif ( empty($_SESSION["user"] ) ) {
     } elseif ( !empty($_SESSION[tmhOauth]->screen_name) ) {
@@ -73,6 +74,7 @@
         $_SESSION["user"] = $_SESSION[tmhOauth]->screen_name;
         $_SESSION["tempuser"] = $_SESSION["user"];
 
+
     } else {
 
         /** if no request is made, default to the owners' stuff! */
@@ -80,12 +82,14 @@
             $_SESSION["user"] = $_SESSION["tempuser"];
         else
             $_SESSION["user"] = $config['twitter_screenname'];
+        unset($_SESSION['tempuser']);
      //   echo "setting user... to default: ".$_SESSION["user"];
+
 
     }
 
-// $u = $config['twitter_screenname'];
-// $u = $_SESSION['user'];
+    /** @var $u , $user -  */
+    $u = $use_user = $_SESSION["user"] ;
 
 
 
@@ -365,6 +369,15 @@
 			$uid        = $pd['value'];
 			$screenname = $twitterApi->getScreenName($pd['value']);
 		}
+
+        /* get twitter user row */
+        $dtfavtest = time() - SYNC_FAVORITES;
+        $tuQ = $db->query("SELECT * FROM `".DTP."tweetusers` WHERE `userid` = '" . $db->s($uid) . "' AND lastupdated < ".$dtfavtest."");
+        $favsync = ( $db->numRows($tuQ) > 0 AND SYNC_FAVORITES ) ;
+
+
+
+        /*** coordinating last fetched tweet ***/
 		$tiQ = $db->query("SELECT `tweetid` FROM `".DTP."tweets` WHERE `userid` = '" . $db->s($uid) . "' ORDER BY `id` DESC LIMIT 1");
 		if($db->numRows($tiQ) > 0){
 			$ti      = $db->fetch($tiQ);
@@ -382,6 +395,14 @@
 		if($sinceID){
 			echo l("Newest tweet I've got: <strong>" . $sinceID . "</strong>\n");
 		}
+
+
+        /***
+         * @todo maybe track the regularity of posts/tweets..
+         * and minimize calls to maximize pull...
+         * (IOW - wait 'til we typ. have 150+ tweets before pulling, on active accounts
+         * thereby minimizing the calls to receive 20 tweets each... ;)
+         */
 
         if ( GET_TWEETS ) {
 
@@ -440,7 +461,7 @@
 
         }
 
-        if ( SYNC_FAVORITES ) {
+        if ( $favsync ) {
 
             // Checking personal favorites -- scanning all
             echo l("<div>");
@@ -596,6 +617,7 @@
      * check for maintenance mode
      */
 
+
 	if ( $isMaint ) {
 
     //    $config['twitter_screenname'] = $u;
@@ -605,7 +627,7 @@
 		/***
 		 *		assign user to view...
 		 **/
-        $u = $use_user = ( empty( $_SESSION["user"] ) ) ? $config['twitter_screenname'] : $_SESSION["user"] ;
+   //     $u = $use_user = ( empty( $_SESSION["user"] ) ) ? $config['twitter_screenname'] : $_SESSION["user"] ;
 	//	$config['twitter_screenname'] = $use_user;
 	
 	}
@@ -643,8 +665,6 @@
 
         /** override the tmhOauth screen_name */
     //    $_SESSION[tmhOauth]->screen_name = "GingerB42";
-
-        $u = $use_user = $_SESSION[tmhOauth]->screen_name;
 
         $authorQ     = $db->query("SELECT * FROM `".DTP."tweetusers`
             WHERE `screenname` = '" . $db->s($use_user) . "'
@@ -701,6 +721,7 @@
 	/***
 	 *		setup where clauses
 	 **/
+
 	$qwhr = array();
 	if ( !empty( $u ) ) {
 		$qwhr['where'] = getUserWhere($u);

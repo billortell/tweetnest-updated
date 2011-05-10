@@ -1,42 +1,16 @@
 <?php
-
-$ad1 = <<< END
-<img style='margin: 7px auto;' src='http://dummyimage.com/175x70.png/ff5e99/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
-END;
-$ad2 = <<< END
-<img style='margin: 7px auto;' src='http://dummyimage.com/175x70.png/1FA9E6/fff&text=ad+spot+1' border="0" alt="ad spot 1"/>
-END;
-
-$ga_top = <<< END
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-4505986509846513";
-/* tweetstuff_468x15 */
-google_ad_slot = "9802607339";
-google_ad_width = 468;
-google_ad_height = 15;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-END;
-
-
-
-
-
-/***
- * login in/out link for navbar area...
- */
-$loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
-                    <a href='".APP_PATH."/auth/?action=logout'>
-                            Logout
-                    </a>
-                " : "
-                    <a href='".APP_PATH."/auth/'>
-                            Login & download tweets now!
-                    </a>
-                " ;
+    /***
+     * login in/out link for navbar area...
+     */
+    $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
+                        <a href='".APP_PATH."/auth/?action=logout'>
+                                Logout
+                        </a>
+                    " : "
+                        <a href='".APP_PATH."/auth/'>
+                                Login & download tweets now!
+                        </a>
+                    " ;
 
 
 	// TWEET NEST
@@ -73,7 +47,7 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
             <div id="author">
                 
                 <?php if ( $config["logo"] ) { ?>
-                <a href="<?php echo APP_PATH;?>">
+                <a href="/<?php echo APP_PATH;?>">
                     <div class=nest_logo></div>
                 </a>
                 <?php } ?>
@@ -120,27 +94,35 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
                 <?php if ( APP_SHOW_NAVBAR ) { ?>
                 <div id=navbar>
 
+                    <?php if ( APP_MULTIUSER ) { ?>
                     <!-- login/out url link -->
                     <div style='float:left; padding: 10px auto;font-weight:bold;'>
                         <?php echo $loginout_url; ?>
                     </div>
+                    <?php } ?>
 
+                    <?php if ( APP_MULTIUSER ) { ?>
                     <!-- download tweets, search, user list nav bar links -->
                     <div style='float:right; padding: 10px auto; font-weight:bold;'>
                         <a href="<?php echo APP_PATH;?>/download">
                                 download your tweets!
                         </a>
                     </div>
+                    <?php } ?>
+
                     <div class='search_form_toggle' style='float:right; padding: 10px auto;font-weight:bold;'>
                         <a href="javascript:void(0);">
-                            use search tool
+                            search tweets
                         </a>
                     </div>
+
+                    <?php if ( APP_MULTIUSER ) { ?>
                     <div style='float:right; padding: 10px auto; font-weight:bold;'>
                         <a href="<?php echo APP_PATH;?>/users">
                                 user list
                         </a>
                     </div>
+                    <?php } ?>
 
 
                     <div style='clear:both;'></div>
@@ -156,8 +138,8 @@ $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
                             <br/>
                             <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
                             <br/>
-                            <span class="meonly"><?php echo !empty($_SESSION[user])? "search within <strong>".$_SESSION[user]."</strong> only " : "" ;?></span>
-                            <input type="checkbox" name="meonly" <?php echo ( empty($_GET[q]) || $_GET[meonly] || ( $_GET[q] AND !empty($_GET[meonly]) ) ) ? "checked=checked":"";?> />
+                                <span class="meonly"><?php echo !empty($_SESSION[user])? "search within <strong>".$_SESSION[user]."</strong> only " : "" ;?></span>
+                                <input type="checkbox" name="meonly" <?php echo ( empty($_GET[q]) || $_GET[meonly] || ( $_GET[q] AND !empty($_GET[meonly]) ) ) ? "checked=checked":"";?> />
                         </div>
                     </form>
                     <div style='clear:both;'></div>
