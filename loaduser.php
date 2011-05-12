@@ -6,7 +6,7 @@
     }
     load_user(DEBUG_MAINTENANCE);
 
-	$pageHeader     = "We've completely loaded your Twitter User Profile!";
+	$pageHeader     = "We've loaded your Twitter User Profile!";
     $content_class  = "";
 
 	require "inc/header.php";
@@ -30,6 +30,6 @@
         <div style='clear:both;'></div>
     </div>
 
-<?php
+    <?php
 
-require "inc/footer.php";
+    require "inc/footer.php";

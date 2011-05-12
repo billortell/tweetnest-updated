@@ -1,18 +1,4 @@
 <?php
-    /***
-     * login in/out link for navbar area...
-     */
-    $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
-                        <a href='".APP_PATH."/auth/?action=logout'>
-                                Logout
-                        </a>
-                    " : "
-                        <a href='".APP_PATH."/auth/'>
-                                Login & download tweets now!
-                        </a>
-                    " ;
-
-
 	// TWEET NEST
 	// HTML Header
 
@@ -101,7 +87,7 @@
                     </div>
                     <?php } ?>
 
-                    <?php if ( APP_MULTIUSER ) { ?>
+                    <?php if ( APP_MULTIUSER AND APP_OAUTH_USER ) { ?>
                     <!-- download tweets, search, user list nav bar links -->
                     <div style='float:right; padding: 10px auto; font-weight:bold;'>
                         <a href="<?php echo APP_PATH;?>/download">
@@ -116,7 +102,7 @@
                         </a>
                     </div>
 
-                    <?php if ( APP_MULTIUSER ) { ?>
+                    <?php if ( APP_MULTIUSER AND APP_MULTIUSER_USERLIST ) { ?>
                     <div style='float:right; padding: 10px auto; font-weight:bold;'>
                         <a href="<?php echo APP_PATH;?>/users">
                                 user list

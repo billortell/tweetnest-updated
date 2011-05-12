@@ -721,18 +721,32 @@
 	/***
 	 *		setup where clauses
 	 **/
-
 	$qwhr = array();
 	if ( !empty( $u ) ) {
-		$qwhr['where'] = getUserWhere($u);
-        $qwhr['and'] = getUserWhere($u, TRUE);
-        $qwhr['and_tu'] = str_replace(DTP."tweetusers","tu",$qwhr['and']);
-		$qwhr['where_userid'] = getUserWhere($author[userid], FALSE, TRUE);
-		$qwhr['and_userid'] = getUserWhere($author[userid], TRUE, TRUE);
+		$qwhr['where']          = getUserWhere($u);
+        $qwhr['and']            = getUserWhere($u, TRUE);
+        $qwhr['and_tu']         = str_replace(DTP."tweetusers","tu",$qwhr['and']);
+		$qwhr['where_userid']   = getUserWhere($author[userid], FALSE, TRUE);
+		$qwhr['and_userid']     = getUserWhere($author[userid], TRUE, TRUE);
 	} else {
 		// fill with blanks... to view all! :)
 		$qwhr['where'] = $qwhr['and'] = $qwhr['where_userid'] = $qwhr['and_userid'] = "";
 	}
 	
 
+    
+    /***
+     * login in/out link for navbar area...
+     */
+    $loginout_url = ( !empty($_SESSION[tmhOauth]) ) ? "
+                        <a href='".APP_PATH."/auth/?action=logout'>
+                                Logout
+                        </a>
+                    " : "
+                        <a href='".APP_PATH."/auth/'>
+                                Login & download tweets now!
+                        </a>
+                    " ;
 
+
+    define("APP_OAUTH_USER",!empty($_SESSION["tmhOauth"]));

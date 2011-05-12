@@ -114,6 +114,12 @@
 			global $db;
 			global $qwhr_and, $qwhr;
 
+        //    echo "qwhr_and: ".$qwhr_and."<br/>";
+        //    echo "<pre>";
+        //    print_r($qwhr);
+        //    echo "</pre>";
+            
+            
 			$stf   = 0.7; // Search words can at most be present in 70% of the tweets
 			if(strlen($q) < $this->minWordLength){ return false; } // <3 ;)
 			

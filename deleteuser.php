@@ -20,7 +20,7 @@
         </p>
     
         <h2>
-            <a href="<?php echo APP_PATH; ?>">Go back to the main page...</a>
+            <a href="<?php echo APP_PATH; ?>/">Go back to the main page...</a>
         </h2>
 
         <p>&nbsp;</p>
