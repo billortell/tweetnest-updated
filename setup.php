@@ -154,7 +154,7 @@
 						} else { $log[] = "Successfully created table ".$DTP."tweets"; }
 						
 						// Tweet users table
-						$q = $db->query("CREATE TABLE `".$DTP."tweetusers` (`id` int(10) unsigned NOT NULL AUTO_INCREMENT, `userid` bigint(20) unsigned NOT NULL, `screenname` varchar(25) NOT NULL, `realname` varchar(255) NOT NULL, `location` varchar(255) NOT NULL, `description` varchar(255) NOT NULL, `profileimage` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `extra` text NOT NULL, `enabled` tinyint(4) NOT NULL, `lastupdated` INT( 11 ) NOT NULL , PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
+						$q = $db->query("CREATE TABLE `".$DTP."tweetusers` (`id` int(10) unsigned NOT NULL AUTO_INCREMENT, `userid` bigint(20) unsigned NOT NULL, `screenname` varchar(25) NOT NULL, `realname` varchar(255) NOT NULL, `location` varchar(255) NOT NULL, `description` varchar(255) NOT NULL, `profileimage` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `extra` text NOT NULL, `enabled` tinyint(4) NOT NULL, `totaltweets` INT( 11 ) NOT NULL, `lastupdated` INT( 11 ) NOT NULL , PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
 						if(!$q){
 							$e[] = "An error occured while creating table <code>".$DTP."tweetusers</code>: <code>" . $db->error() . "</code>";
 						} else { $log[] = "Successfully created table ".$DTP."tweetusers"; }

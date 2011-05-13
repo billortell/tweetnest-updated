@@ -104,7 +104,7 @@
 			$url    = "http" . ($ssl ? "s" : "") . "://api.twitter.com/" . $path;
 			$file   = "";
 
-            if ( !empty( $this->rate_limits ) ) {
+            if ( !empty( $this->rate_limits ) AND $path != "1/account/rate_limit_status.json" ) {
                 if ( $this->get_remaining_hits() <= 0 ) {
                     echo ( !DEBUG_MAINTENANCE ) ? "" : l("returning... cuz we're over the limit!\n");
                     return false;

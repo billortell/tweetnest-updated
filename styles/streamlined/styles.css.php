@@ -724,6 +724,16 @@ div.nest_logo {
     z-index: 100;
 }
 
+.fleft {
+    float:left;
+}
+.fright {
+    float:right;
+}
+.clearfix {
+    clear:both;
+}
+
 <?php
 	if($returnCSS){
 		$css = ob_get_clean();

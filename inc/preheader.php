@@ -213,8 +213,17 @@
 
         ob_start();
         ?>
-            <div class='user_profile'>
+        <div class='user_profile '>
+            <div class='total_tweets fright' >
+                <h1><?php echo number_format($profile['totaltweets'],0,"",",");?></h1>
+                <p>total tweets</p>
+            </div>
+
+            <div class='fleft' >
                 <img src="<?php echo s($profile['profileimage']); ?>" style='margin-top: 5px; margin-bottom: 10px;' width="48" height="48" alt="" />
+            </div>
+
+            <div class='fleft' >
                 <h2>
                         <strong><?php echo s($profile['realname']); ?></strong>
                 </h2>
@@ -224,6 +233,8 @@
                     </a>
                 </p>
             </div>
+            <div class=clearfix></div>
+        </div>
     <?php
         return ob_get_clean();
     }
@@ -241,7 +252,6 @@
 
         if ( $retArr )
             return $user_list;
-
 
         $user_list_str = "";
         foreach ( $user_list as $user ) {
@@ -493,6 +503,17 @@
             } else {
                 echo l(bad("Nothing to insert.\n"));
             }
+
+            $qtt = $db->query(
+                "SELECT count( * ) AS total_tweets FROM ".DTP."tweets
+                    WHERE userid = '$uid'"
+            );
+            $total_tweets = $db->fetch($qtt);
+
+            $db->query(
+                "UPDATE ".DTP."tweetusers SET totaltweets = " . $total_tweets["total_tweets"] ."
+                WHERE userid = '$uid'"
+            );
 
         }
 
