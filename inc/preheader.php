@@ -119,7 +119,37 @@
 	// Twitter API class
 	require "class.twitterapi.php";
 	$twitterApi = new TwitterApi();
-    $twitterApi->get_rate_limit_status();
+
+    global $isTwitterUp;
+    global $isTwitterUpDelay;
+    $isTwitterUpDelay = APP_TWITTER_CHECK ;  // 5 minutes?
+    function isTwitterUp(){
+        global $isTwitterUpDelay;
+
+        // init. it or give me what we have...
+        $isTwitterUp = ( empty( $_SESSION["twitter_status"] ) ) ? array() : $_SESSION["twitter_status"] ;
+
+        //we wanna check to see if tiwtter is up/down
+        if (
+            $_SESSION["twitter_status"]["time"] < ( time() - $isTwitterUpDelay )
+             || empty( $_SESSION["twitter_status"] )
+        ) {
+            // let's get a new check/status
+            $isUP = getURL("http://twitter.com",NULL,TRUE);
+            $isTwitterUp["prevtime"] = $isTwitterUp["time"];  // 1235413531 typish.
+            $isTwitterUp["time"] = time();  // 1235413531 typish.
+            $isTwitterUp["isUP"] = ( (int)$isUP["http_code"] == 200 ) ; // 200 we're looking for...
+            $_SESSION["twitter_status"] = $isTwitterUp;
+
+        }
+        // return the status from saved session...
+        return $_SESSION["twitter_status"]["isUP"] ;
+    }
+
+    // only do this if twitter seems to be 'up!'
+    if ( isTwitterUp() )
+        $twitterApi->get_rate_limit_status();
+
 
 	// Search
 	require "class.search.php";
@@ -220,7 +250,7 @@
         return $user_list_str;
     }
 
-	function getURL($url, $auth = NULL){
+	function getURL($url, $auth = NULL, $returnHeaders = FALSE){
         global $twitterApi;
 		// HTTP grabbin' cURL options, also exsecror
 		$httpOptions = array(
@@ -259,6 +289,11 @@
         $xHeaders = $twitterApi->set_xHeaders($headers);
 
         $info = curl_getinfo($conn);
+
+        if ( $returnHeaders ) {
+            return $info;
+        }
+
 
         if( strpos($url,"rate_limit_status") === FALSE ){
             echo ( !DEBUG_MAINTENANCE ) ? "" : "<h2>".$twitterApi->get_remaining_hits()." Remaining Calls</h2>";

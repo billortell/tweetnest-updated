@@ -7,7 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.search.php" afterPath="$PROJECT_DIR$/inc/class.search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.twitterapi.php" afterPath="$PROJECT_DIR$/inc/class.twitterapi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preheader.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="preheader.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/preheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="423" column="50" selection-start="13069" selection-end="13069" vertical-scroll-proportion="-5.54902">
+            <state line="139" column="15" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.61778843">
               <folding />
             </state>
           </provider>
@@ -51,16 +52,16 @@
       <file leaf-file-name="class.twitterapi.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class.twitterapi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="54" selection-start="4225" selection-end="4226" vertical-scroll-proportion="-0.68">
+            <state line="105" column="0" selection-start="3740" selection-end="3740" vertical-scroll-proportion="2.28">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.search.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="class.search.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/class.search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="20" selection-start="7043" selection-end="7043" vertical-scroll-proportion="0.43683085">
+            <state line="35" column="30" selection-start="6681" selection-end="6681" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,7 +106,7 @@
       <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="38" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
+            <state line="51" column="0" selection-start="1847" selection-end="1847" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -198,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/samples/index.php" />
         <option value="$PROJECT_DIR$/auth/index.php" />
         <option value="$PROJECT_DIR$/lib/TwitterAppInterface.php" />
@@ -206,14 +206,15 @@
         <option value="$PROJECT_DIR$/download.php" />
         <option value="$PROJECT_DIR$/styles/streamlined/styles.css.php" />
         <option value="$PROJECT_DIR$/tweets.js" />
-        <option value="$PROJECT_DIR$/inc/config.php" />
         <option value="$PROJECT_DIR$/deleteuser.php" />
         <option value="$PROJECT_DIR$/loaduser.php" />
         <option value="$PROJECT_DIR$/inc/header.php" />
-        <option value="$PROJECT_DIR$/inc/preheader.php" />
         <option value="$PROJECT_DIR$/tmp/strip.php" />
         <option value="$PROJECT_DIR$/inc/stopwords.txt" />
         <option value="$PROJECT_DIR$/inc/class.search.php" />
+        <option value="$PROJECT_DIR$/inc/class.twitterapi.php" />
+        <option value="$PROJECT_DIR$/inc/config.php" />
+        <option value="$PROJECT_DIR$/inc/preheader.php" />
       </list>
     </option>
   </component>
@@ -287,34 +288,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="samples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetnest-updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -467,7 +440,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="131" y="-1" width="1203" height="696" extended-state="0" />
+    <frame x="81" y="8" width="1203" height="696" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5947467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -505,7 +478,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed unset of $_SESSION[tempuser] in preheader" />
+    <option name="LAST_COMMIT_MESSAGE" value="putting the keywordify-r on a diet: no url parsing, added stop-word functionality, less schluff" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -540,6 +513,7 @@
     <MESSAGE value="major error fixes..." />
     <MESSAGE value="minor tweaks, etc..." />
     <MESSAGE value="fixed unset of $_SESSION[tempuser] in preheader" />
+    <MESSAGE value="putting the keywordify-r on a diet: no url parsing, added stop-word functionality, less schluff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -548,13 +522,6 @@
     <entry file="file://$PROJECT_DIR$/searchfeed.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="10" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="38" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -615,27 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loadtweets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="224" selection-end="224" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="423" column="50" selection-start="13069" selection-end="13069" vertical-scroll-proportion="-5.54902">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class.twitterapi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="54" selection-start="4225" selection-end="4226" vertical-scroll-proportion="-0.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/stopwords.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
@@ -645,7 +591,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/class.search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="20" selection-start="7043" selection-end="7043" vertical-scroll-proportion="0.43683085">
+        <state line="35" column="30" selection-start="6681" selection-end="6681" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadtweets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="224" selection-end="224" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class.twitterapi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="3740" selection-end="3740" vertical-scroll-proportion="2.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1847" selection-end="1847" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="15" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.61778843">
           <folding />
         </state>
       </provider>

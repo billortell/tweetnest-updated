@@ -114,9 +114,11 @@
             }
 
 			do {
+
 				if($file != ""){ sleep(2); } // Wait two secs if we got a failwhale
 				$file = getURL($url, $auth);
 				if(is_array($file)){ return $file; } // Error
+                
 			} while(
 				// Protect against failwhale
 				(
