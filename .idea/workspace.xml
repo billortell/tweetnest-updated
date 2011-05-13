@@ -7,11 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deleteuser.php" afterPath="$PROJECT_DIR$/deleteuser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.search.php" afterPath="$PROJECT_DIR$/inc/class.search.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loaduser.php" afterPath="$PROJECT_DIR$/loaduser.php" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,19 +31,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="28" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.2761021">
+            <state line="128" column="13" selection-start="5613" selection-end="5613" vertical-scroll-proportion="-22.960785">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preheader.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="preheader.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/preheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="751" column="26" selection-start="24979" selection-end="24993" vertical-scroll-proportion="-13.615385">
+            <state line="718" column="0" selection-start="23964" selection-end="23964" vertical-scroll-proportion="-0.024390243">
               <folding />
             </state>
           </provider>
@@ -189,8 +186,8 @@
         <option value="$PROJECT_DIR$/inc/config.php" />
         <option value="$PROJECT_DIR$/deleteuser.php" />
         <option value="$PROJECT_DIR$/loaduser.php" />
-        <option value="$PROJECT_DIR$/inc/preheader.php" />
         <option value="$PROJECT_DIR$/inc/header.php" />
+        <option value="$PROJECT_DIR$/inc/preheader.php" />
       </list>
     </option>
   </component>
@@ -416,7 +413,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="52" width="1203" height="686" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5947467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -425,9 +422,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3433396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22456141" sideWeight="0.39468303" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12982456" sideWeight="0.65666044" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.120032445" sideWeight="0.65666044" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20614035" sideWeight="0.65666044" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19059205" sideWeight="0.65666044" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -454,7 +451,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="major error fixes..." />
+    <option name="LAST_COMMIT_MESSAGE" value="minor tweaks, etc..." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -487,6 +484,7 @@
     <MESSAGE value="completing git repo - with extra files" />
     <MESSAGE value="tweaks, minor changes" />
     <MESSAGE value="major error fixes..." />
+    <MESSAGE value="minor tweaks, etc..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -586,16 +584,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
+    <entry file="file://$PROJECT_DIR$/inc/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="751" column="26" selection-start="24979" selection-end="24993" vertical-scroll-proportion="-13.615385">
+        <state line="128" column="13" selection-start="5613" selection-end="5613" vertical-scroll-proportion="-22.960785">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/header.php">
+    <entry file="file://$PROJECT_DIR$/inc/preheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="28" selection-start="3677" selection-end="3677" vertical-scroll-proportion="0.2761021">
+        <state line="718" column="0" selection-start="23964" selection-end="23964" vertical-scroll-proportion="-0.024390243">
           <folding />
         </state>
       </provider>

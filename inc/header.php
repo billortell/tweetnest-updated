@@ -123,9 +123,12 @@
                             type in any word, combination of words, we'll find it!
                             <br/>
                             <input type="text" name="q" value="<?php if($searchQuery){ echo s($searchQuery); } ?>" />
+
+                            <?php if ( APP_MULTIUSER AND APP_OAUTH_USER ) { ?>
                             <br/>
                                 <span class="meonly"><?php echo !empty($_SESSION[user])? "search within <strong>".$_SESSION[user]."</strong> only " : "" ;?></span>
                                 <input type="checkbox" name="meonly" <?php echo ( empty($_GET[q]) || $_GET[meonly] || ( $_GET[q] AND !empty($_GET[meonly]) ) ) ? "checked=checked":"";?> />
+                            <?php } ?>
                         </div>
                     </form>
                     <div style='clear:both;'></div>

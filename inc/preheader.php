@@ -82,7 +82,7 @@
             $_SESSION["user"] = $_SESSION["tempuser"];
         else
             $_SESSION["user"] = $config['twitter_screenname'];
-        unset($_SESSION['tempuser']);
+     //   unset($_SESSION['tempuser']);
      //   echo "setting user... to default: ".$_SESSION["user"];
 
 
@@ -718,6 +718,8 @@
 
 
 
+
+
 	/***
 	 *		setup where clauses
 	 **/
@@ -732,7 +734,8 @@
 		// fill with blanks... to view all! :)
 		$qwhr['where'] = $qwhr['and'] = $qwhr['where_userid'] = $qwhr['and_userid'] = "";
 	}
-	
+
+
 
     
     /***
