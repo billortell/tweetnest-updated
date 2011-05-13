@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="194e5498-49da-4f4d-a458-5bf5b98a8da0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/preheader.php" afterPath="$PROJECT_DIR$/inc/preheader.php" />
     </list>
     <ignored path="tweetnest-updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -451,7 +449,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor tweaks, etc..." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed unset of $_SESSION[tempuser] in preheader" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -485,6 +483,7 @@
     <MESSAGE value="tweaks, minor changes" />
     <MESSAGE value="major error fixes..." />
     <MESSAGE value="minor tweaks, etc..." />
+    <MESSAGE value="fixed unset of $_SESSION[tempuser] in preheader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
