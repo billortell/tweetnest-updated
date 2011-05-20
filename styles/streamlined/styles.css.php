@@ -80,10 +80,13 @@ h1, h2, h3, h4, h5, h6 {
 	overflow: hidden;
 }
 
-        /** bill's add **/
-        #top {
-            background: transparent url(<?php echo APP_PATH; ?>/img/blue_grad.png) 0px 0px repeat-x;
-        }
+/** bill's add **/
+#top {
+    /*
+    background: transparent url(<?php echo APP_PATH; ?>/img/blue_grad.png) 0px 0px repeat-x;
+    */
+    background: <?php echo APP_TOP_BG_COLOR;?>;
+}
 
 
 #top #author {

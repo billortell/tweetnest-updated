@@ -15,7 +15,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="An archive of all tweets written by <?php echo s(rtrim($author['realname'], ".")); ?>." />
 	<meta name="author" content="<?php echo s($author['realname']); ?>" />
-	<link rel="stylesheet" href="<?php echo s($styleFile); ?>?csstype=<?php echo $csstype;?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo s($styleFile); ?>?csstype=<?php echo $csstype;?>&base=<?php echo $current_url_file;?>" type="text/css" />
 	<?php if($isSearch):?>
 	<link rel="alternate" type="application/atom+xml" href="<?php echo $path; ?>/searchfeed?q=<?php echo s($searchQuery); ?>" title="Atom Feed" />	
 	<?php endif;?>
