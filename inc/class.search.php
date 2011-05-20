@@ -32,24 +32,34 @@
             return $t;
         }
 
+        protected function removeAtReplies($t){
+            $t = preg_replace("/@.*? /ie", ' ', $t);
+            return $t;
+        }
+
 		protected function keywordify($text){
             // Immediately strip urls from keywordification...
             $text = $this->stripURLs($text);
             // Immediately strip stop words from keywordification...
             $text = $this->stripStopWords($text);
+            // remove @relied-to names
+            $text = $this->removeAtReplies($text);
 			// No fancy apostrophes and dashes in keywords
-			$text = strtolower(stupefyRaw($text, true));
+            $text = strtolower(stupefyRaw($text, true));
+            // removes --'s -'s from " -xxx" and/or " --xxx"
+            $text = strtolower(removeRaw($text, true));
 			// Remove any apostrophes which aren't part of words
 			$keywords = substr(preg_replace("((?<=\W)'|'(?=\W))", "", " " . $text . " "), 1, -1);
 			// Remove symbols and multiple whitespace
-			$keywords = preg_replace("/[\^\$&\(\)<>`\"\|,@_\?%~\+\[\]{}:=\/#\\\\;!\.\s]+/", " ", $keywords);
+        //    $keywords = preg_replace("/[\^\$&\(\)<>`\"\|,@_\?%~\+\[\]{}:=\/#\\\\;!\.\s]+/", " ", $keywords);
+            $keywords = preg_replace("/[\^\$&\(\)<>`\"\|,@_\?%~\+\[\]{}:=\/\\\\;!\.\s]+/", " ", $keywords);
 			return $keywords;
 		}
 		
 		public function index($id, $text){
 			global $db;
 			$itext = $this->keywordify($text);
-			
+
 			$words = explode(" ", $itext);
 			$wordcount = count($words);
 			$uniques = array_count_values($words);

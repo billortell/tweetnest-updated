@@ -88,9 +88,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #top #author {
 	position: relative;
-/***
-    background: <?php echo css("top_background_color");?> url(<?php echo APP_PATH; ?>/img/004_cloud_large_part_transp.png) 250px -150px no-repeat;
-***/
     background: transparent url(<?php echo APP_PATH;?>/img/004_cloud_large_part_transp_10perc.png) 250px -150px no-repeat;
 	color: <?php echo css("top_text_color"); ?>;
 	padding: 20px 10px;

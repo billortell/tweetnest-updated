@@ -47,8 +47,9 @@
 	require "config.php";
 
 
-     $u = $config['twitter_screenname'];
-     $u = $_SESSION['user'];
+    /** @var $u - used in extra filters for mysql queries */
+    $u = $config['twitter_screenname'];
+    $u = $_SESSION['user'];
 
     
     /***
@@ -373,6 +374,22 @@
 			array("–", "—", "‘", "’", "“", "”", "…"),
 			array("---", "--", "'", "'", "\"", "\"", "..."),
 			$str) : $str;
+	}
+
+	// STUPE STUPE STUPEFY
+	function removeRaw($str, $force = false){
+		global $config;
+
+        $ta = array("---", "--", "-", "...");
+
+        $tai = implode("|",$ta);
+        $taip = str_replace("|"," |",$tai)." ";
+        $tais = " ".str_replace("|","| ",$tai);
+        $taiall = $taip."|".$tais;
+
+    //  $str = str_replace(explode("|",$taiall)," ",$str);
+		return ($config['smartypants'] || $force) ? str_replace(explode("|",$taiall)," ",$str)
+                : $str;
 	}
 
 
